@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'Kanit';
+  src: url('../webfonts/Kanit-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Sarabun';
+  src: url('../webfonts/Sarabun-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Sukhumvit Set';
+    src: url('../webfonts/SukhumvitSet-Text.ttf');
+}
+/* 
+body {
+    font-family: 'Kanit', Arial, Helvetica, sans-serif;
+} */
+
+/*  ตัวอย่าง font
+h1 {
+    font-family: "Sarabun", Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    font-family: "Sukhumvit Set", Arial, Helvetica, sans-serif;
+}
+*/
