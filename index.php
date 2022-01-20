@@ -5,7 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <?php $output = '<title>%TITLE%</title>'; ?>
+    <link rel="stylesheet" href="dist/css/reset.css">
+    <link rel="icon" href="dist/img/icontitle.png" type="image/png" >
+
+
+
+    <link rel="stylesheet" href="dist/bootstrap/bootstrap.css">
 </head>
 <body>
 <?php 
@@ -29,6 +36,9 @@ switch ($current_page) {
 
 
 ?>
+
+<script src="dist/bootstrap/jquery.slim.min.js"></script>
+<script src="dist/bootstrap/bootstrap.js"></script>
 </body>
 </html>
 
