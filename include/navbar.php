@@ -15,7 +15,7 @@
     padding: 0;
     margin-top: 14px;
   }
-  .ul-acc-nav li a,p {
+  .ul-acc-nav li a {
     display: block;
     color: #2f3640;
     text-align: center;
