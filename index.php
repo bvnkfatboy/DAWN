@@ -15,6 +15,11 @@
     <link rel="icon" href="dist/img/icontitle.png" type="image/png" >
     
     <link rel="stylesheet" href="dist/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="dist/sweetalert/sweetalert.css">
+
+    <script src="dist/bootstrap/jquery.slim.min.js"></script>
+    <script src="dist/bootstrap/bootstrap.js"></script>
+    <script src="dist/sweetalert/sweetalert.js"></script>
 </head>
 <body>
 
@@ -29,9 +34,24 @@ switch ($current_page) {
         $output = str_replace('%TITLE%', $title, $output);
         echo $output;
         break;
+
+    // auth 
+    case ('login'):
+        include_once 'auth/login.php';
+        $title = "เข้าสู่ระบบ - DAWN (Coffee & Bar)";
+        $output = str_replace('%TITLE%', $title, $output);
+        echo $output;
+        break;
+    case ('register'):
+        include_once 'auth/register.php';
+        $title = "สมัครสมาชิก - DAWN (Coffee & Bar)";
+        $output = str_replace('%TITLE%', $title, $output);
+        echo $output;
+        break;
+    
     default:
         include_once 'error.php';
-        $title = "ไม่มีหน้านี้ - DAWN (Coffee & Bar)";
+        $title = "ไม่พบหน้านี้ - DAWN (Coffee & Bar)";
         $output = str_replace('%TITLE%', $title, $output);
         echo $output;
         break;
@@ -40,8 +60,7 @@ switch ($current_page) {
 
 ?>
 
-<script src="dist/bootstrap/jquery.slim.min.js"></script>
-<script src="dist/bootstrap/bootstrap.js"></script>
+
 </body>
 </html>
 

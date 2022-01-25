@@ -34,11 +34,19 @@
     
   <li><a href="#"> <i class="fab fa-instagram"></i> dawn.coffee</a></li>
   
+  <?php 
+      session_start();
+      if(isset($_SESSION['auth-id'])){
+  ?>
+  <li style="float:right"><a href="">ออกจากระบบ</a></li>
+  <li style="float:right" ><a style="color: #2f3640;">|</a></li>
+  <li style="float:right" ><a href="">แก้ไขสมาชิก</a></li>
+  <?php }else{ ?>
   <li style="float:right"><a href="">สมัครสมาชิก</a></li>
   <li style="float:right" ><a style="color: #2f3640;">|</a></li>
   <li style="float:right" ><a href="">เข้าสู่ระบบ</a></li>
   <li style="float:right" ><a style="color: #2f3640;"><i class="fas fa-user-alt"></i></a></li>
-  
+  <?php }?>
 
   
   </div>
