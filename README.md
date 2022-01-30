@@ -1,3 +1,3 @@
-DAWN (Coffee & Bar) senior project web management
+โปรเจคเว็บขายสินค้าชื่อ Around the end
 
-MAIN PHP 7
+แก้ไขชื่อฐานข้อมูลที่ Config.inc.php

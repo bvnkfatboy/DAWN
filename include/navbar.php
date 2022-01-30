@@ -38,13 +38,13 @@
       session_start();
       if(isset($_SESSION['auth-id'])){
   ?>
-  <li style="float:right"><a href="">ออกจากระบบ</a></li>
+  <li style="float:right"><a href="?page=logout">ออกจากระบบ</a></li>
   <li style="float:right" ><a style="color: #2f3640;">|</a></li>
-  <li style="float:right" ><a href="">แก้ไขสมาชิก</a></li>
+  <li style="float:right" ><a href="?page=profile">แก้ไขสมาชิก</a></li>
   <?php }else{ ?>
-  <li style="float:right"><a href="">สมัครสมาชิก</a></li>
+  <li style="float:right"><a href="?page=register">สมัครสมาชิก</a></li>
   <li style="float:right" ><a style="color: #2f3640;">|</a></li>
-  <li style="float:right" ><a href="">เข้าสู่ระบบ</a></li>
+  <li style="float:right" ><a href="?page=login">เข้าสู่ระบบ</a></li>
   <li style="float:right" ><a style="color: #2f3640;"><i class="fas fa-user-alt"></i></a></li>
   <?php }?>
 
@@ -70,7 +70,7 @@
 
 <nav class="navbar navbar-expand-md navbar-light bg-c-light">
   <div class="container">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="?page=home">
     <img src="dist/img/logo_dawn.png" alt="logo" width="50px">
   </a>
 
@@ -82,7 +82,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">หน้าแรก</a>
+        <a class="nav-link" href="?page=home">หน้าแรก</a>
       </li>
 
       <li class="nav-item dropdown">
@@ -99,7 +99,25 @@
         <a class="nav-link" href="#">เกี่ยวกับ</a>
       </li>
     </ul>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="?page=cart"><i class="fas fa-shopping-cart"></i> ตะกร้าสินค้า</a>
+        </li>
+        <?php
+        // $check_admin = ($_SESSION['auth-status']);
+        $nav_admin = isset($_SESSION['auth-status']) ? $_SESSION['auth-status'] : '';  
+        if($nav_admin == "admin"){
+        echo' 
+            <li class="nav-item ">
+                <a class="nav-link" href="?page=admin">หลังร้าน</a>
+            </li> 
+            ';
+        }
+        ?>
+    </ul>
   </div>
   </div>
 
 </nav>
+
+

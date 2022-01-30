@@ -34,7 +34,9 @@
     background-color: black;
     border: 1px black;
 }
-
+label {
+        
+    }
 .btn:hover{
     background-color: whitesmoke;
     color: black;
@@ -45,7 +47,7 @@
 
 
 <?php
-include('config.php');
+include('config.inc.php');
 if (isset($_POST['auth-log'])) {
     $acc_email = $_POST['auth-email'];
     $acc_pass  = $_POST['auth-pass'];
@@ -80,16 +82,16 @@ if (isset($_POST['auth-log'])) {
 }
 
 ?>
-
+<?php include_once('include/navbar.php')?>
 
 <div class="login-form">
     <form action="" method="post">  
         <div class="form-group">
-        <label for="auth-email">อีเมล</label>
+        <label for="auth-email">EMAIL</label>
             <input type="email" class="form-control" placeholder="Email" id="auth-email" name="auth-email" required="required">
         </div>
         <div class="form-group">
-        <label for="auth-pass">รหัสผ่าน</label>
+        <label for="auth-pass">PASSWORD</label>
             <input type="password" class="form-control" placeholder="Password" id="auth-pass" name="auth-pass" required="required">
         </div>
         <div class="form-group">
@@ -97,7 +99,9 @@ if (isset($_POST['auth-log'])) {
         </div>
     
     </form>
-    <p class="text-center"><a href="?page=register">หากยังไม่มีบัญชี กดที่นี้</a></p>
-    <p class="text-center"><a href="?page=home">กลับหน้าแรก</a></p>
+    <p class="text-center"><a href="?page=register">Create an Account</a></p>
+    <p class="text-center"><a href="?page=home">Return to Store</a></p>
+    <p class="text-center"><a href="#">Forgot your password?</a></p>
 </div>
 
+<?php include_once('include/footer.php')?>

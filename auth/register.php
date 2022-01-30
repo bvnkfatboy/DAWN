@@ -45,11 +45,13 @@
         color: black;
 
     }
-
+    label {
+        
+    }
 </style>
 
 <?php
-include('config.php');
+include('config.inc.php');
 if (isset($_POST['auth-reg'])) {
     $acc_name = $_POST['auth-name'];
     $acc_email = $_POST['auth-email'];
@@ -59,8 +61,8 @@ if (isset($_POST['auth-reg'])) {
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($result);
     if (!$row) {
-        $query = "INSERT INTO account (acc_name,acc_email,acc_password,acc_status) 
-            VALUES ('$acc_name','$acc_email','$acc_pass','member')";
+        $query = "INSERT INTO account (acc_name,acc_email,acc_password,acc_address,acc_phone,acc_status) 
+            VALUES ('$acc_name','$acc_email','$acc_pass','no detail','no detail','member')";
         mysqli_query($conn, $query);
         header('location: ?page=login');
 
@@ -84,28 +86,28 @@ if (isset($_POST['auth-reg'])) {
 }
 ?>
 
-
+<?php include_once('include/navbar.php') ?>
 
 <div class="login-form">
     <form action="" method="post">
         <div class="form-group">
-        <label for="auth-name">ชื่อ</label>
+        <label for="auth-name">NAME</label>
             <input type="text" class="form-control" placeholder="Name" id="auth-name" name="auth-name" required="required">
         </div>
         <div class="form-group">
-        <label for="auth-email">อีเมล</label>
+        <label for="auth-email">EMAIL</label>
             <input type="email" class="form-control" placeholder="Email" id="auth-email" name="auth-email" required="required">
         </div>
         <div class="form-group">
-        <label for="auth-pass">รหัสผ่าน</label>
+        <label for="auth-pass">PASSWORD</label>
             <input type="password" class="form-control" placeholder="Password" id="auth-pass" name="auth-pass" required="required">
         </div>
         <div class="form-group">
-            <button type="submit" name="auth-reg" class="btn btn-primary btn-block">สร้างบัญชี</button>
+            <button type="submit" name="auth-reg" class="btn btn-primary btn-block">CREATE</button>
         </div>
 
     </form>
-    <p class="text-center"><a href="?page=login">หากมีบัญชีอยู่แล้ว กดที่นี้</a></p>
-    <p class="text-center"><a href="?page=home">กลับหน้าแรก</a></p>
+    <p class="text-center"><a href="?page=home">Return to Store</a></p>
 </div>
 
+<?php include_once('include/footer.php') ?>
