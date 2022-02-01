@@ -40,9 +40,7 @@ $check_admin = isset($_SESSION['auth-status']) ? $_SESSION['auth-status'] : '';
         min-height: 38px;
         border-radius: 2px;
     }
-    label {
-        
-    }
+
     .btn-update {
         font-size: 15px;
         font-weight: bold;

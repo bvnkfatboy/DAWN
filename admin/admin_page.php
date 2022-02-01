@@ -55,9 +55,6 @@ if($check_admin == 'admin' ){
 
 }
 
-.product_cards:hover {
-
-}
 
 a{
     color:black;
@@ -79,6 +76,9 @@ a:hover{
     width: 100%;
 }
 </style>
+
+<div class="container">
+
 
 <div class="row justify-content-md-center mt-4">
 
@@ -145,8 +145,8 @@ a:hover{
 
 
 </div>
-
-
+    
+</div>
 
 <?php include_once('include/footer.php');?>
 

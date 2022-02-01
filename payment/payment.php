@@ -49,9 +49,7 @@
         color: black;
 
     }
-    label {
-        
-    }
+
 </style>
 
 

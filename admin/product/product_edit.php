@@ -14,7 +14,6 @@ $check_admin = isset($_SESSION['auth-status']) ? $_SESSION['auth-status'] : '';
             $pro_id = $_POST['pro-id'];
             $pro_name = $_POST['pro-name'];
             $pro_price = $_POST['pro-price'];
-            $pro_size = $_POST['pro-size'];
             $pro_detail = $_POST['pro-detail'];
             $pro_type = $_POST['pro-type'];
 
@@ -29,7 +28,6 @@ $check_admin = isset($_SESSION['auth-status']) ? $_SESSION['auth-status'] : '';
 
                 $sql = "UPDATE product SET pro_name ='".$pro_name."',
                                         pro_price ='".$pro_price."', 
-                                        pro_size ='".$pro_size."', 
                                         pro_detail ='".$pro_detail."', 
                                         pro_image ='".$path_copy."', 
                                         pro_type ='".$pro_type."'
@@ -39,7 +37,6 @@ $check_admin = isset($_SESSION['auth-status']) ? $_SESSION['auth-status'] : '';
             } else {
                 $sql = "UPDATE product SET pro_name ='".$pro_name."',
                                         pro_price ='".$pro_price."', 
-                                        pro_size ='".$pro_size."', 
                                         pro_detail ='".$pro_detail."', 
                                         pro_type ='".$pro_type."'
                                         WHERE pro_id ='".$pro_id."' ";
@@ -206,7 +203,7 @@ $check_admin = isset($_SESSION['auth-status']) ? $_SESSION['auth-status'] : '';
 
 <?php
 $sql = "SELECT * FROM product WHERE pro_id='".$_GET["pro_id"]."' ";
-$result = mysqli_query($conn, $sql) or die ("Error in query: $sql " . mysqli_error());
+$result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_array($result);
 extract($row);
 
@@ -242,25 +239,10 @@ extract($row);
   
 
                 <div class="row">
-                    <div class="col-md-6">              
+                    <div class="col-md-12">              
                         <div class="form-group">
                         <label>ราคาสินค้า</label>
                             <input type="text" class="form-control " value="<?=$pro_price ?>"  name="pro-price" required="required">
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">                
-                        <div class="form-group">
-                            <label>ไซต์</label>
-
-                            <select name="pro-size" class="form-control text-center">
-                                <option> <?=$pro_size ?> </option>
-                                <option>S</option>
-                                <option>M</option>
-                                <option>L</option>
-                                <option>XL</option>
-                                <option>NONE</option>
-                            </select>
                         </div>
                     </div>
                 </div>
@@ -274,12 +256,10 @@ extract($row);
                         <label>ประเภทสินค้า</label>
                         <select name="pro-type" class="form-control text-center">
                             <option><?=$pro_type ?></option>
-                            <option>OUTERWEAR</option>
-                            <option>SHIRST</option>
-                            <option>BOTTOMS</option>
-                            <option>HEADWEAR</option>
-                            <option>ACCESSORIES</option>
-                            <option>MORE</option>
+                            <option>เครื่องดื่ม</option>
+                            <option>เมล็ดกาแฟ</option>
+                            <option>แก้วกาแฟ</option>
+                            <option>อื่น ๆ</option>
                         </select>
                 </div>
 

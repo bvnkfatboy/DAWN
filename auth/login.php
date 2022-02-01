@@ -34,15 +34,14 @@
     background-color: black;
     border: 1px black;
 }
-label {
-        
-    }
+
 .btn:hover{
     background-color: whitesmoke;
     color: black;
 
 }
 </style>
+
 
 
 
@@ -87,21 +86,19 @@ if (isset($_POST['auth-log'])) {
 <div class="login-form">
     <form action="" method="post">  
         <div class="form-group">
-        <label for="auth-email">EMAIL</label>
-            <input type="email" class="form-control" placeholder="Email" id="auth-email" name="auth-email" required="required">
+        <label for="auth-email">อีเมล</label>
+            <input type="email" class="form-control" placeholder="กรอกอีเมล" id="auth-email" name="auth-email" required="required">
         </div>
         <div class="form-group">
-        <label for="auth-pass">PASSWORD</label>
-            <input type="password" class="form-control" placeholder="Password" id="auth-pass" name="auth-pass" required="required">
+        <label for="auth-pass">รหัสผ่าน</label>
+            <input type="password" class="form-control" placeholder="กรอกรหัสผ่าน" id="auth-pass" name="auth-pass" required="required">
         </div>
-        <div class="form-group">
-            <button type="submit" name="auth-log" class="btn btn-primary btn-block">SIGN IN</button>
+        <div class="form-group mt-5">
+            <button type="submit" name="auth-log" class="btn btn-primary btn-block">ลงชื่อเข้าใช้</button>
         </div>
     
     </form>
-    <p class="text-center"><a href="?page=register">Create an Account</a></p>
-    <p class="text-center"><a href="?page=home">Return to Store</a></p>
-    <p class="text-center"><a href="#">Forgot your password?</a></p>
+    
 </div>
 
 <?php include_once('include/footer.php')?>

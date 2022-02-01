@@ -12,7 +12,6 @@ if($check_admin == 'admin' ){
 
         $pro_name = $_POST['pro-name'];
         $pro_price = $_POST['pro-price'];
-        $pro_size = $_POST['pro-size'];
         $pro_detail = $_POST['pro-detail'];
         $pro_type = $_POST['pro-type'];
 
@@ -25,8 +24,8 @@ if($check_admin == 'admin' ){
             $path_copy = $path.$file;
             move_uploaded_file($_FILES['inputfile']['tmp_name'],$path_copy);
 
-            $sql = "INSERT INTO product (pro_name,pro_price,pro_size,pro_detail,pro_image,pro_type)
-                    VALUES ('$pro_name' , '$pro_price' , '$pro_size' ,' $pro_detail ',' $path_copy','$pro_type') ";
+            $sql = "INSERT INTO product (pro_name,pro_price,pro_detail,pro_image,pro_type)
+                    VALUES ('$pro_name' , '$pro_price' ,' $pro_detail ',' $path_copy','$pro_type') ";
             $query = mysqli_query($conn, $sql);
             // header('location: ?page=product_insert');
             if($query){ ?>
@@ -190,6 +189,8 @@ if($check_admin == 'admin' ){
         border: 1px black;
     }
 </style>
+<div class="container">
+
 <a href="?page=admin_product" class="btn btn-primary btn-block btn-back">กลับหน้าจัดการสินค้า</a><br>
 <div class="container-fluid">
 	<div class="row">
@@ -236,12 +237,10 @@ if($check_admin == 'admin' ){
                 <div class="form-group">
                         <label>ประเภทสินค้า</label>
                         <select name="pro-type" class="form-control text-center">
-                            <option>OUTERWEAR</option>
-                            <option>SHIRST</option>
-                            <option>BOTTOMS</option>
-                            <option>HEADWEAR</option>
-                            <option>ACCESSORIES</option>
-                            <option>MORE</option>
+                            <option>เครื่องดื่ม</option>
+                            <option>เมล็ดกาแฟ</option>
+                            <option>แก้วกาแฟ</option>
+                            <option>อื่น ๆ</option>
                         </select>
                 </div>
 
@@ -253,7 +252,8 @@ if($check_admin == 'admin' ){
 		</div>
 	</div>
 </div>
-
+    
+</div>
 <script>
     const inputfile = document.querySelector("#inputfile");
     const img = document.querySelector("#imgs");

@@ -76,25 +76,25 @@ if($check_admin == 'admin' ){
 
                 case ('ทั้งหมด'):
                     include_once 'admin/orders/order_all.php';
-                    $title = "หลังร้าน - A.T.E";
+                    $title = "หลังร้าน - DAWN (Cafe & Bar)";
                     $output = str_replace('%TITLE%', $title, $output);
                     echo $output;
                     break;
                 case ('รอชำระเงิน'):
                     include_once 'admin/orders/order_wpay.php';
-                    $title = "หลังร้าน - A.T.E";
+                    $title = "หลังร้าน - DAWN (Cafe & Bar)";
                     $output = str_replace('%TITLE%', $title, $output);
                     echo $output;
                     break;
                 case ('รอตรวจสอบ'):
                     include_once 'admin/orders/order_wadmin.php';
-                    $title = "หลังร้าน - A.T.E";
+                    $title = "หลังร้าน - DAWN (Cafe & Bar)";
                     $output = str_replace('%TITLE%', $title, $output);
                     echo $output;
                     break;
                 case ('สำเร็จแล้ว'):
                     include_once 'admin/orders/order_succress.php';
-                    $title = "หลังร้าน - A.T.E";
+                    $title = "หลังร้าน - DAWN (Cafe & Bar)";
                     $output = str_replace('%TITLE%', $title, $output);
                     echo $output;
                     break;

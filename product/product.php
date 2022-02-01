@@ -37,6 +37,9 @@ extract($row);
 
 ?>
 
+<div class="container">
+    
+
 <a href="#" onclick="window.history.back();" class="btn btn-primary btn-block btn-back">กลับหน้าร้าน</a><br>
 
 <div class="row mt-5">
@@ -54,20 +57,13 @@ extract($row);
   
 
                 <div class="row">
-                    <div class="col-md-6">              
+                    <div class="col-md-12">              
                         <div class="form-group">
                         <label>ราคาสินค้า</label>
                             <p><?=$pro_price ?></p>
                         </div>
                     </div>
 
-                    <div class="col-md-6">                
-                        <div class="form-group">
-                            <label>ไซต์</label>
-
-                            <p><?=$pro_size ?></p>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="form-group">
@@ -83,5 +79,5 @@ extract($row);
 
 </div>
 </div>
-
+</div>
 <?php include_once('include/footer.php');?>

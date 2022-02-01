@@ -36,9 +36,7 @@
         min-height: 38px;
         border-radius: 2px;
     }
-    label {
-        
-    }
+
     .btn {
         font-size: 15px;
         font-weight: bold;

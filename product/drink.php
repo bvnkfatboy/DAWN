@@ -4,9 +4,8 @@
   float: left;
   width: 20%;
   padding: 0 15px;
-
   padding-bottom:15px;
-  /* border: 1px solid #444444; */
+
 }
 
 .row_pro {margin: 0; margin-top:15px;}
@@ -60,7 +59,6 @@
     height: 25px;
     width: 100%;
 }
-
 .btn-editpro {        
         max-width: 150px;
         border-radius: 2px;
@@ -79,19 +77,16 @@
     color: black;
 
 }
-
 </style>
 
 <?php include_once('include/navbar.php');?>
 <div class="container">
   
-
 <div class="row_pro">
 
     <?php
         include_once('config.inc.php');
-        
-        $result = mysqli_query($conn,"SELECT * FROM product ORDER BY pro_name");
+        $result = mysqli_query($conn,"SELECT * FROM product WHERE pro_type='เครื่องดื่ม' ");
 
         while($row = mysqli_fetch_array($result)){
             echo '

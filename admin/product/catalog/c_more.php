@@ -60,7 +60,6 @@
     height: 25px;
     width: 100%;
 }
-
 .btn-editpro {        
         max-width: 150px;
         border-radius: 2px;
@@ -79,31 +78,24 @@
     color: black;
 
 }
-
 </style>
 
-<?php include_once('include/navbar.php');?>
-<div class="container">
-  
 
 <div class="row_pro">
 
     <?php
         include_once('config.inc.php');
-        
-        $result = mysqli_query($conn,"SELECT * FROM product ORDER BY pro_name");
+        $result = mysqli_query($conn,"SELECT * FROM product WHERE pro_type='อื่น ๆ' ");
 
         while($row = mysqli_fetch_array($result)){
             echo '
-            <a href="?page=product&&pro_id= '.$row['pro_id'].' " style="color:black">
-              <div class="column_pro">
-                <div class="product_cards">
-                    <img  width="336px" src="'.$row['pro_image'].'">
-                    <div class="product_name"><b class="product_text">'.$row['pro_name'].'</b> <p>'.$row['pro_price'].' บาท</p></div>
-
-                </div>
-              </div> 
-            </a>
+             <div class="column_pro">
+            <div class="product_cards">
+                <img  width="336px" src="'.$row['pro_image'].'">
+                <div class="product_name"><b class="product_text">'.$row['pro_name'].'</b> <p>'.$row['pro_price'].' บาท</p></div>
+            </div>
+            <a href="?page=product_edit&&pro_id='.$row['pro_id'].'" class="btn btn-primary btn-block btn-editpro">แก้ไขสินค้า</a>
+          </div> 
             
             ';
 
@@ -119,5 +111,3 @@
   </div> -->
 
 </div>
-</div>
-<?php include_once('include/footer.php');?>

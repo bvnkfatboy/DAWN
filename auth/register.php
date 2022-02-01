@@ -45,9 +45,6 @@
         color: black;
 
     }
-    label {
-        
-    }
 </style>
 
 <?php
@@ -56,13 +53,14 @@ if (isset($_POST['auth-reg'])) {
     $acc_name = $_POST['auth-name'];
     $acc_email = $_POST['auth-email'];
     $acc_pass  = $_POST['auth-pass'];
+    $acc_phone  = $_POST['auth-phone'];
 
     $sql = "SELECT * FROM account Where acc_email='" . $acc_email . "' ";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($result);
     if (!$row) {
         $query = "INSERT INTO account (acc_name,acc_email,acc_password,acc_address,acc_phone,acc_status) 
-            VALUES ('$acc_name','$acc_email','$acc_pass','no detail','no detail','member')";
+            VALUES ('$acc_name','$acc_email','$acc_pass','กรุณาเพิ่มที่อยู่','$acc_phone','member')";
         mysqli_query($conn, $query);
         header('location: ?page=login');
 
@@ -91,23 +89,27 @@ if (isset($_POST['auth-reg'])) {
 <div class="login-form">
     <form action="" method="post">
         <div class="form-group">
-        <label for="auth-name">NAME</label>
-            <input type="text" class="form-control" placeholder="Name" id="auth-name" name="auth-name" required="required">
+        <label for="auth-name">ชื่อ - นามสกุล</label>
+            <input type="text" class="form-control" placeholder="กรอกชื่อ - นามสกุล" id="auth-name" name="auth-name" required="required">
         </div>
         <div class="form-group">
-        <label for="auth-email">EMAIL</label>
-            <input type="email" class="form-control" placeholder="Email" id="auth-email" name="auth-email" required="required">
+        <label for="auth-phone">เบอร์โทรศัพท์</label>
+            <input type="text" class="form-control" placeholder="กรอกเบอร์โทรศัพท์" id="auth-phone" name="auth-phone" required="required">
         </div>
         <div class="form-group">
-        <label for="auth-pass">PASSWORD</label>
-            <input type="password" class="form-control" placeholder="Password" id="auth-pass" name="auth-pass" required="required">
+        <label for="auth-email">อีเมล</label>
+            <input type="email" class="form-control" placeholder="กรอกอีเมล" id="auth-email" name="auth-email" required="required">
         </div>
         <div class="form-group">
-            <button type="submit" name="auth-reg" class="btn btn-primary btn-block">CREATE</button>
+        <label for="auth-pass">รหัสผ่าน</label>
+            <input type="password" class="form-control" placeholder="กรอกรหัสผ่าน" id="auth-pass" name="auth-pass" required="required">
+        </div>
+        <div class="form-group mt-5">
+            <button type="submit" name="auth-reg" class="btn btn-primary btn-block">สมัครเข้าใช้งาน</button>
         </div>
 
     </form>
-    <p class="text-center"><a href="?page=home">Return to Store</a></p>
+    
 </div>
 
 <?php include_once('include/footer.php') ?>

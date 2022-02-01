@@ -46,6 +46,8 @@ if($check_admin == 'admin' ){
     }
 
 </style>
+ิ<div class="container">
+
 <a href="?page=admin" class="btn btn-primary btn-block btn-back">กลับหน้าหลังบ้าน</a>
 <hr>
 
@@ -54,7 +56,11 @@ if($check_admin == 'admin' ){
 		<div class="col-md-2">
             <h4>หมวดหมู่สินค้า</h4>
             <div class="list-group list-group-flush">
-            <a href="?page=admin_product&&catalog=all" class="list-group-item list-group-item-action">- ALL</a>
+            <a href="?page=admin_product&&catalog=all" class="list-group-item list-group-item-action">- สินค้าทั้งหมด</a>
+            <a href="?page=admin_product&&catalog=drink" class="list-group-item list-group-item-action">- เครื่องดื่ม</a>
+            <a href="?page=admin_product&&catalog=bean" class="list-group-item list-group-item-action">- เมล็ดกาแฟ</a>
+            <a href="?page=admin_product&&catalog=mug" class="list-group-item list-group-item-action">- แก้วกาแฟ</a>
+            <a href="?page=admin_product&&catalog=more" class="list-group-item list-group-item-action">- อื่น</a>
             </div>
 		</div>
 		<div class="col-md-10">
@@ -65,13 +71,37 @@ if($check_admin == 'admin' ){
 
                 case ('all'):
                     include_once 'admin/product/catalog/c_all.php';
-                    $title = "หลังร้าน - A.T.E";
+                    $title = "หลังร้าน - DAWN (Cafe & Bar)";
+                    $output = str_replace('%TITLE%', $title, $output);
+                    echo $output;
+                    break;
+                case ('drink'):
+                    include_once 'admin/product/catalog/c_drink.php';
+                    $title = "หลังร้าน - DAWN (Cafe & Bar)";
+                    $output = str_replace('%TITLE%', $title, $output);
+                    echo $output;
+                    break;
+                case ('bean'):
+                    include_once 'admin/product/catalog/c_bean.php';
+                    $title = "หลังร้าน - DAWN (Cafe & Bar)";
+                    $output = str_replace('%TITLE%', $title, $output);
+                    echo $output;
+                    break;
+                case ('mug'):
+                    include_once 'admin/product/catalog/c_mug.php';
+                    $title = "หลังร้าน - DAWN (Cafe & Bar)";
+                    $output = str_replace('%TITLE%', $title, $output);
+                    echo $output;
+                    break;
+                case ('more'):
+                    include_once 'admin/product/catalog/c_more.php';
+                    $title = "หลังร้าน - DAWN (Cafe & Bar)";
                     $output = str_replace('%TITLE%', $title, $output);
                     echo $output;
                     break;
                 // case ('outerwear'):
                 //     include_once 'admin/product/catalog/c_outerwear.php';
-                //     $title = "หลังร้าน - A.T.E";
+                //     $title = "หลังร้าน - DAWN (Cafe & Bar)";
                 //     $output = str_replace('%TITLE%', $title, $output);
                 //     echo $output;
                 //     break;
@@ -79,7 +109,7 @@ if($check_admin == 'admin' ){
         
                 default:
                     include_once 'error404.php';
-                    $title = "ERROR PAGE - A.T.E";
+                    $title = "ERROR PAGE - DAWN (Cafe & Bar)";
                     $output = str_replace('%TITLE%', $title, $output);
                     echo $output;
             };
@@ -87,6 +117,8 @@ if($check_admin == 'admin' ){
             ?>
 		</div>
 	</div>
+</div>
+    
 </div>
 <?php include_once('include/footer.php');?>
 <?php }else {

@@ -18,6 +18,7 @@
     <script src="dist/js/bootstrap.bundle.min.js"></script>
     <script src="dist/js/sweetalert2.all.min.js"></script>
 
+
     <style>
         /* body{
             width: 100%;
@@ -38,6 +39,30 @@
         case ('allproduct'):
             include_once 'product/allproduct.php';
             $title = "สินค้าทั้งหมด - DAWN (Cafe & Bar)";
+            $output = str_replace('%TITLE%', $title, $output);
+            echo $output;
+            break;
+        case ('drink'):
+            include_once 'product/drink.php';
+            $title = "เครื่องดื่ม - DAWN (Cafe & Bar)";
+            $output = str_replace('%TITLE%', $title, $output);
+            echo $output;
+            break;
+        case ('bean'):
+            include_once 'product/bean.php';
+            $title = "เมล็ดกาแฟ - DAWN (Cafe & Bar)";
+            $output = str_replace('%TITLE%', $title, $output);
+            echo $output;
+            break;
+        case ('mug'):
+            include_once 'product/mug.php';
+            $title = "แก้วกาแฟ - DAWN (Cafe & Bar)";
+            $output = str_replace('%TITLE%', $title, $output);
+            echo $output;
+            break;
+        case ('more'):
+            include_once 'product/more.php';
+            $title = "อื่น ๆ - DAWN (Cafe & Bar)";
             $output = str_replace('%TITLE%', $title, $output);
             echo $output;
             break;
@@ -245,20 +270,6 @@
     }
     ?>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 </body>
 
 </html>
