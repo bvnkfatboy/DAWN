@@ -108,7 +108,7 @@ a:hover{
     <div class="column">
         <a href="?page=admin_product">    
             <div class="product_cards">
-                <i class="fas  fa-tshirt mb-1 fa-5x mx-auto w-100 d-block"></i>
+                <i class="fas fa-mug-hot mb-1 fa-5x mx-auto w-100 d-block"></i>
                 <div class="product_name "><p class="product_text">สินค้า</p></div>
             </div>
         </a>

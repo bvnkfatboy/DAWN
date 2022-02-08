@@ -54,7 +54,7 @@ if (isset($_POST['auth-log'])) {
     $sql="SELECT * FROM account Where acc_email='".$acc_email."' and acc_password='".$acc_pass."' ";
     $result = mysqli_query($conn,$sql);
     
-    if(mysqli_num_rows($result)==1){
+    if( mysqli_num_rows($result)==1){
         session_start();
         $row = mysqli_fetch_array($result);
         $_SESSION['auth-id'] = $row['acc_id'];
