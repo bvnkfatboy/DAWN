@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 14, 2022 at 03:05 PM
+-- Generation Time: Feb 14, 2022 at 06:17 PM
 -- Server version: 10.4.22-MariaDB
--- PHP Version: 7.4.26
+-- PHP Version: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -60,8 +60,16 @@ CREATE TABLE `orders` (
   `order_tal` text NOT NULL,
   `order_key` text NOT NULL,
   `status` text NOT NULL,
-  `order_track` text NOT NULL
+  `order_track` text NOT NULL,
+  `order_shiping` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`order_id`, `order_date`, `order_name`, `order_address`, `order_email`, `order_tal`, `order_key`, `status`, `order_track`, `order_shiping`) VALUES
+(1, '2022-02-14 16:23:17', 'เจมส์ จริงนะ', 'sohojfgjrgopijwrgjworjgwrg\r\n', '123@123.com', '1234123123', 'zEZB7dI0KqTm9cP', 'รอชำระเงิน', '', '');
 
 -- --------------------------------------------------------
 
@@ -75,6 +83,13 @@ CREATE TABLE `orders_detail` (
   `pro_id` int(5) NOT NULL,
   `qty` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `orders_detail`
+--
+
+INSERT INTO `orders_detail` (`detail_id`, `order_id`, `pro_id`, `qty`) VALUES
+(1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -163,13 +178,13 @@ ALTER TABLE `account`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `orders_detail`
 --
 ALTER TABLE `orders_detail`
-  MODIFY `detail_id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `detail_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `payment`
