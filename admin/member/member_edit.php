@@ -91,7 +91,7 @@ if (isset($_POST['auth-update'])) {
                                acc_phone ='".$auth_phone."',
                                acc_status ='".$auth_status."'
                                WHERE acc_id ='".$auth_id."' ";
-    $suc = mysqli_query($conn, $sql) or die ("Error in query: $sql " . mysqli_error());
+    $suc = mysqli_query($conn, $sql);
     if($suc){ ?>
         <script>
             Swal.fire({
@@ -116,11 +116,13 @@ if (isset($_POST['auth-update'])) {
 
 <?php
 $sql = "SELECT * FROM account WHERE acc_id='".$_GET["acc-id"]."' ";
-$result = mysqli_query($conn, $sql) or die ("Error in query: $sql " . mysqli_error());
+$result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_array($result);
 extract($row);
 
 ?>
+<div class="container">
+
 <a href="?page=admin" class="btn btn-primary btn-block btn-back">กลับหน้าสมาชิก</a><br>
 <div class="login-form">
     <form action="" method="post">
@@ -150,6 +152,7 @@ extract($row);
             <option selected><?=$acc_status ?></option>
             <option>admin</option>
             <option>member</option>
+            <option>delivery</option>
         </select>
         </div>
         <div class="form-group">
@@ -158,7 +161,8 @@ extract($row);
 
     </form>
 </div>
-
+    
+</div>
 
 <?php }?>
 <?php include_once('include/footer.php')?>

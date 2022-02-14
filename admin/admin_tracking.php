@@ -28,6 +28,9 @@ if($check_admin == 'admin' ){
 
     }
 </style>
+<div class="container">
+    
+
 <a href="?page=admin" class="btn btn-primary btn-block btn-back">กลับหน้าหลังบ้าน</a><br>
 <h2 class="text-center">ออเดอร์รอแจ้งเลขพัสดุ</h2><br>
 <?php
@@ -53,7 +56,7 @@ if($check_admin == 'admin' ){
     }
 
     ?>
-
+</div>
 <?php include_once('include/footer.php');?>
 <?php }else {
     header('Location: ?page=home');

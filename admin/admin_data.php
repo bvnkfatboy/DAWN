@@ -48,6 +48,9 @@ if($check_admin == 'admin' ){
 
 
 </style>
+<div class="container">
+    
+
 <a href="?page=admin" class="btn btn-primary btn-block btn-back">กลับหน้าหลังบ้าน</a><br>
 
 
@@ -106,6 +109,7 @@ if($check_admin == 'admin' ){
 
 		</div>
 	</div>
+</div>
 </div>
 
 <?php include_once('include/footer.php');?>

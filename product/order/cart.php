@@ -61,16 +61,18 @@ if(!isset($_SESSION["intLine"]))
 
 ?>
 
+<div class="container">
+	
 
 <br>
 <h2 class="ml-4">SHOPPING CART</h2>
 <table id="cart" class="table table-hover table-condensed">
 	<thead>
 		<tr>
-			<th style="width:60%">Product</th>
-			<th style="width:10%">Price</th>
-			<th style="width:10%">Quantity</th>
-			<th style="width:10%" class="text-center">Subtotal</th>
+			<th style="width:60%">ชื่อสินค้า</th>
+			<th style="width:10%">ราคา</th>
+			<th style="width:10%"></th>
+			<th style="width:10%" class="text-center">ราคารวม</th>
 			<th style="width:10%"></th>
 		</tr>
 	</thead>
@@ -135,14 +137,14 @@ if(!isset($_SESSION["intLine"]))
         <div class="col-sm-12 my-auto ">
 			
             <b class="ml-3 sumtotal">สินค้าทั้งหมด: <?php echo number_format($SumTotal,2);?> บาท</b>
-			<a href="?page=checkout" class="btn btn-clear btn-back btn-clear ml-5"> CHECK OUT</a>
-			<a href="?page=cart_clear" class="btn btn-clear btn-back ml-3"> CLEAR CART</a>
+			<a href="?page=checkout" class="btn btn-clear btn-back btn-clear ml-5">ถัดไป</a>
+			<a href="?page=cart_clear" class="btn btn-clear btn-back ml-3">เคลียร์ตะกร้า</a>
 			
         </div>
 		
     </div>
 </div>
-
+</div>
 
 
 

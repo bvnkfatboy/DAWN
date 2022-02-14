@@ -119,13 +119,20 @@
         <?php }?>
         <?php
         // $check_admin = ($_SESSION['auth-status']);
-        $nav_admin = isset($_SESSION['auth-status']) ? $_SESSION['auth-status'] : '';  
-        if($nav_admin == "admin"){
+        $nav_status = isset($_SESSION['auth-status']) ? $_SESSION['auth-status'] : '';  
+        if($nav_status == "admin"){
         echo' 
             <li class="nav-item ">
                 <a class="nav-link" href="?page=admin">หลังร้าน</a>
             </li> 
             ';
+        }
+        if($nav_status == "delivery"){
+          echo' 
+          <li class="nav-item ">
+              <a class="nav-link" href="?page=delivery">เมนูพนักงานเดลิเวอรี่</a>
+          </li> 
+          ';
         }
         ?>
     </ul>
