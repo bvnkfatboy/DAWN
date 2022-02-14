@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 30, 2022 at 04:08 PM
+-- Generation Time: Feb 14, 2022 at 03:05 PM
 -- Server version: 10.4.22-MariaDB
--- PHP Version: 7.4.27
+-- PHP Version: 7.4.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,7 +42,8 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`acc_id`, `acc_name`, `acc_password`, `acc_email`, `acc_address`, `acc_phone`, `acc_status`) VALUES
-(1, 'ADMIN', '1234', 'asd@asd.com', 'no detail', 'no detail', 'admin');
+(1, 'ADMIN', '1234', 'asd@asd.com', 'no detail', 'no detail', 'admin'),
+(2, 'เจมส์ จริงนะ', '1234', '123@123.com', 'sohojfgjrgopijwrgjworjgwrg\r\n', '1234123123', 'delivery');
 
 -- --------------------------------------------------------
 
@@ -108,6 +109,13 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`pro_id`, `pro_name`, `pro_price`, `pro_size`, `pro_detail`, `pro_image`, `pro_type`) VALUES
+(1, 'asdasd', '2222', '', ' 32322323 ', ' dist/img/product/4032bdaeb4ce1b3e684c9e9447311a3e.jpg', 'เครื่องดื่ม');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -149,7 +157,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `account`
 --
 ALTER TABLE `account`
-  MODIFY `acc_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `acc_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `orders`
@@ -173,7 +181,7 @@ ALTER TABLE `payment`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `pro_id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `pro_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
