@@ -1,5 +1,5 @@
 
-<?php include_once('include/navbar.php') ?>
+<?php include_once('include/navbar.php');?>
 
 <style>
 .table>tbody>tr>td, .table>tfoot>tr>td{
@@ -24,9 +24,9 @@
 
 .warpper{
 	width:100%;
-	height:50px;
+	height:105px;
 	background:whitesmoke;
-	margin-top:30px
+	/* margin-top:30px */
 
 }
 
@@ -65,7 +65,7 @@ if(!isset($_SESSION["intLine"]))
 	
 
 <br>
-<h2 class="ml-4">SHOPPING CART</h2>
+<h2 class="ml-4">ตะกร้าสินค้า</h2>
 <table id="cart" class="table table-hover table-condensed">
 	<thead>
 		<tr>
@@ -109,13 +109,12 @@ if(!isset($_SESSION["intLine"]))
 					<div class="col-md-3"><img src="<?php echo $objResult['pro_image']; ?>"  style="max-width:100px"/></div>
 					<div class="col-md-9">
 						<p class="nomargin mt-1"><?php echo $objResult['pro_name']; ?></p>
-						<small>ไซต์: <?php echo $objResult['pro_size']; ?></small>
 					</div>
 				</div>
 			</td>
 			<td data-th="Price"><?php echo number_format($objResult['pro_price'],2); ?></td>
 			<td data-th="Quantity">
-				<p class="text-center"><?php echo $_SESSION["strQty"][$i];?></p>
+				<p class="text-center" style="margin-top: 15px;"><?php echo $_SESSION["strQty"][$i];?></p>
 			</td>
 			<td data-th="Subtotal" class="text-center"><?php echo number_format($Total,2);?></td>
 			<td class="actions" data-th="">
@@ -132,16 +131,61 @@ if(!isset($_SESSION["intLine"]))
 
 </table>
 
+<?php 
+if (isset($_POST['cart-next'])) {
+	$cart_choice = $_POST['cart-choice'];
+	
+	if ($cart_choice == "บริษัทขนส่ง") {
+	?>
+        <script>
+				Swal.fire({
+				title: 'ดำเนินการถัดไปหรือไม่?',
+				text: "คุณพร้อมจะดำเนินการขั้นตอนตอนไปหรือไม่",
+				icon: 'warning',
+				showCancelButton: true,
+				confirmButtonColor: '#3085d6',
+				cancelButtonColor: '#d33',
+				confirmButtonText: 'ตกลง',
+				cancelButtonText: 'ยกเลิก'
+				}).then((result) => {
+				if (result.isConfirmed) {
+					location.href='?page=checkout';
+				}
+				})
+        </script>
+		
+	<?php 
+	} elseif ($cart_choice == "เดลิเวอรี่") {
+		echo "2";
+	} else {
+		echo "3";
+	}
+	
+	
+}
+?>
+
 <div class="warpper">
+	
 <div class="row h-100">
         <div class="col-sm-12 my-auto ">
-			
-            <b class="ml-3 sumtotal">สินค้าทั้งหมด: <?php echo number_format($SumTotal,2);?> บาท</b>
-			<a href="?page=checkout" class="btn btn-clear btn-back btn-clear ml-5">ถัดไป</a>
-			<a href="?page=cart_clear" class="btn btn-clear btn-back ml-3">เคลียร์ตะกร้า</a>
-			
+  			<form action="" method="post">
+				  
+  				<div class="cart-ck" style="display: flex; margin-bottom:10px">
+					<b class="ml-3 sumtotal">เลือกประเภทบริการ: </b>
+					<select id="cart-choice" name="cart-choice" class="form-control" style="max-width: 300px;margin-left:10px;" >
+						<option>บริษัทขนส่ง</option>
+						<option>เดลิเวอรี่</option>
+						<option>รับที่ร้าน</option>
+					</select> 
+				  </div>
+				<!-- <br> -->
+				<b class="ml-3 sumtotal">สินค้าทั้งหมด: <?php echo number_format($SumTotal,2);?> บาท</b>
+				<button type="submit" name="cart-next" class="btn btn-clear btn-back btn-clear ml-5">ถัดไป</button>
+				<!-- <a href="?page=checkout" class="btn btn-clear btn-back btn-clear ml-5">ถัดไป</a> -->
+				<a href="?page=cart_clear" class="btn btn-clear btn-back ml-3">เคลียร์ตะกร้า</a>
+			</form>
         </div>
-		
     </div>
 </div>
 </div>

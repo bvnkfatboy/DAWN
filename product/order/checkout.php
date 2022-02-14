@@ -60,17 +60,18 @@ if(!isset($_SESSION["intLine"]))
 }
 
 ?>
-
+ิ
+<div class="container">
 
 <br>
-<h2 class="ml-4">SHOPPING CART</h2>
+<h2 class="ml-4">ตะกร้าสินค้า</h2>
 <table id="cart" class="table table-hover table-condensed">
 	<thead>
 		<tr>
-			<th style="width:60%">Product</th>
-			<th style="width:10%">Price</th>
-			<th style="width:10%">Quantity</th>
-			<th style="width:10%" class="text-center">Subtotal</th>
+			<th style="width:60%">ชื่อสินค้า</th>
+			<th style="width:10%">ราคา</th>
+			<th style="width:10%"></th>
+			<th style="width:10%" class="text-center">ราคารวม</th>
 			<th style="width:10%"></th>
 		</tr>
 	</thead>
@@ -107,7 +108,6 @@ if(!isset($_SESSION["intLine"]))
 					<div class="col-md-3"><img src="<?php echo $objResult['pro_image']; ?>"  style="max-width:100px"/></div>
 					<div class="col-md-9">
 						<p class="nomargin mt-1"><?php echo $objResult['pro_name']; ?></p>
-						<small>ไซต์: <?php echo $objResult['pro_size']; ?></small>
 					</div>
 				</div>
 			</td>
@@ -202,6 +202,8 @@ $row = mysqli_fetch_array($query);
 </div>
 </div>
 
+    
+</div>
 
 
 
