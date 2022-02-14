@@ -42,6 +42,12 @@
             $output = str_replace('%TITLE%', $title, $output);
             echo $output;
             break;
+        case ('delivery'):
+            include_once 'delivery/delivery_home.php';
+            $title = "พนักงานจัดส่ง - DAWN (Cafe & Bar)";
+            $output = str_replace('%TITLE%', $title, $output);
+            echo $output;
+            break;
         case ('drink'):
             include_once 'product/drink.php';
             $title = "เครื่องดื่ม - DAWN (Cafe & Bar)";
