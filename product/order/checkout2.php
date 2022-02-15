@@ -134,7 +134,7 @@ if(!isset($_SESSION["intLine"]))
 <div class="row h-100">
         <div class="col-sm-12 my-auto ">
 			
-            <!-- <b class="ml-3 sumtotal float-right">สินค้าทั้งหมด: <?php echo number_format($SumTotal,2);?> บาท</b> -->
+            <!-- <b class="ml-3 sumtotal float-right">ส่งภายในตัวเมืองเท่านั้น</b> -->
 
 
 			
@@ -160,17 +160,21 @@ $row = mysqli_fetch_array($query);
                 </div>
 
                 <div class="form-group">
-                    <label>ค่าขนส่ง : <b>70</b>  บาท</label>
+                    <label>ค่าบริการเดลิเวอรี้ : <b>20</b>  บาท</label>
                 </div>
                 <div class="form-group">
-                    <label>รวม : <b><?php echo number_format($SumTotal+70,2);?></b> บาท</label>
+                    <label><b>** ส่งภายในตัวเมืองเท่านั้น **</b></label>
+                </div>
+                <div class="form-group">
+                    <label>รวม : <b><?php echo number_format($SumTotal+20,2);?></b> บาท</label>
                 </div>
   </form>
 </div>
 <div class="col-md-6 mt-5 ">
         
 <form action="?page=save_checkout" method="post" class="mx-auto"style="width:350px" enctype="multipart/form-data">  
-                <input type="text"  name="order_status" class="form-control" required="required" value="รอชำระเงิน" hidden >
+                <input type="text"  name="order_shiping" class="form-control" required="required" value="เดลิเวอรี้" hidden >
+                <input type="text"  name="order_status" class="form-control" required="required" value="รอพนักงานรับ" hidden >
                 <div class="form-group">
                     <label >รายละเอียด</label>
                 </div>

@@ -156,9 +156,45 @@ if (isset($_POST['cart-next'])) {
 		
 	<?php 
 	} elseif ($cart_choice == "เดลิเวอรี่") {
-		echo "2";
+		?>
+        <script>
+				Swal.fire({
+				title: 'ดำเนินการถัดไปหรือไม่?',
+				text: "คุณพร้อมจะดำเนินการขั้นตอนตอนไปหรือไม่",
+				icon: 'warning',
+				showCancelButton: true,
+				confirmButtonColor: '#3085d6',
+				cancelButtonColor: '#d33',
+				confirmButtonText: 'ตกลง',
+				cancelButtonText: 'ยกเลิก'
+				}).then((result) => {
+				if (result.isConfirmed) {
+					location.href='?page=checkout2';
+				}
+				})
+        </script>
+		
+	<?php 
 	} else {
-		echo "3";
+		?>
+        <script>
+				Swal.fire({
+				title: 'ดำเนินการถัดไปหรือไม่?',
+				text: "คุณพร้อมจะดำเนินการขั้นตอนตอนไปหรือไม่",
+				icon: 'warning',
+				showCancelButton: true,
+				confirmButtonColor: '#3085d6',
+				cancelButtonColor: '#d33',
+				confirmButtonText: 'ตกลง',
+				cancelButtonText: 'ยกเลิก'
+				}).then((result) => {
+				if (result.isConfirmed) {
+					location.href='?page=checkout3';
+				}
+				})
+        </script>
+		
+	<?php 
 	}
 	
 	
@@ -178,7 +214,9 @@ if (isset($_POST['cart-next'])) {
 						<option>เดลิเวอรี่</option>
 						<option>รับที่ร้าน</option>
 					</select> 
+					<b class="ml-3 sumtotal">** ในกรณีที่สั่งเครื่องดื่มไม่สามารถใช้บริษัทขนส่งได้ **</b>
 				  </div>
+
 				<!-- <br> -->
 				<b class="ml-3 sumtotal">สินค้าทั้งหมด: <?php echo number_format($SumTotal,2);?> บาท</b>
 				<button type="submit" name="cart-next" class="btn btn-clear btn-back btn-clear ml-5">ถัดไป</button>

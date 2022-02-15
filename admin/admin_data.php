@@ -66,6 +66,7 @@ if($check_admin == 'admin' ){
             <a href="?page=admin_data&&list_order=ทั้งหมด" class="list-group-item list-group-item-action">- ทั้งหมด</a>
             <a href="?page=admin_data&&list_order=รอชำระเงิน" class="list-group-item list-group-item-action">- รอชำระเงิน</a>
             <a href="?page=admin_data&&list_order=รอตรวจสอบ" class="list-group-item list-group-item-action">- รอตรวจสอบ</a>
+            <a href="?page=admin_data&&list_order=รอพนักงานรับ" class="list-group-item list-group-item-action">- รอพนักงานรับ</a>
             <a href="?page=admin_data&&list_order=สำเร็จแล้ว" class="list-group-item list-group-item-action">- สำเร็จแล้ว</a>
             </div>
 
@@ -91,6 +92,12 @@ if($check_admin == 'admin' ){
                     break;
                 case ('รอตรวจสอบ'):
                     include_once 'admin/orders/order_wadmin.php';
+                    $title = "หลังร้าน - DAWN (Cafe & Bar)";
+                    $output = str_replace('%TITLE%', $title, $output);
+                    echo $output;
+                    break;
+                case ('รอพนักงานรับ'):
+                    include_once 'admin/orders/order_delivery.php';
                     $title = "หลังร้าน - DAWN (Cafe & Bar)";
                     $output = str_replace('%TITLE%', $title, $output);
                     echo $output;

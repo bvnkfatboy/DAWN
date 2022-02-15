@@ -8,6 +8,8 @@ $order_name = $_POST['order_name'];
 $order_email = $_POST['order_email'];
 $order_tal = $_POST['order_tal'];
 $order_address = $_POST['order_address'];
+$order_shiping = $_POST['order_shiping'];
+$order_status = $_POST['order_status'];
 $datetime = date("Y-m-d H:i:s");
 
 
@@ -15,8 +17,8 @@ $keyrm = generateRandomString();
 date_default_timezone_set('Asia/bangkok');
 
 
-$sql = "INSERT INTO orders (order_date,order_name,order_address,order_email,order_tal,order_key,status)
-VALUES ('$datetime','$order_name','$order_address','$order_email','$order_tal','$keyrm','รอชำระเงิน') ";
+$sql = "INSERT INTO orders (order_date,order_name,order_address,order_email,order_tal,order_key,status,order_shiping)
+VALUES ('$datetime','$order_name','$order_address','$order_email','$order_tal','$keyrm','$order_status','$order_shiping') ";
 mysqli_query($conn,$sql);
 $strOrderID = mysqli_insert_id($conn);
 for($i=0;$i<=(int)$_SESSION["intLine"];$i++)

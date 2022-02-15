@@ -136,40 +136,52 @@ $objResult = mysqli_fetch_array($objQuery);
                 <div class="form-group">
                     <label>สถานะสั่งซื้อ : <b><?php echo $objResult['status'];?></b></label>
                 </div>
+
+                <div class="form-group">
+                    <label>การให้บริการ : <b><?php echo $objResult['order_shiping'];?></b></label>
+                </div>
+
+                <?php if($objResult['order_shiping'] == 'บริษัทขนส่ง' && $objResult['order_shiping'] != 'เดลิเวอรี้'){?>
+                
+               
                 <div class="form-group">
                     <label>เลขขนส่ง : <b><?php echo $objResult['order_track'];?></b></label>
                 </div>
+
+                 <?php } ?>
   </form>
 </div>
 <div class="col-md-6 mt-5 ">
         
 <form action="?page=save_checkout" method="post" class="mx-auto"style="width:350px" enctype="multipart/form-data">  
 
-                <div class="form-group">
+                <?php if($objResult['order_shiping'] != 'รับที่ร้าน'){?>
+                <div class="form-group ">
                     <label >รายละเอียด</label>
                 </div>
 
-                <div class="form-group">
-                    <label >ชื่อ:</label>
-                    <p><?php echo $objResult['order_name'];?></p>
+                <div class="form-group d-flex">
+                    <label >ชื่อ: </label>
+                    <p>&nbsp; <?php echo $objResult['order_name'];?></p>
                 </div>
-                <div class="form-group">
-                    <label> อีเมล:</label>
-                    <p><?php echo $objResult['order_email'];?></p>
+                <div class="form-group d-flex">
+                    <label> อีเมล: </label>
+                    <p>&nbsp; <?php echo $objResult['order_email'];?></p>
                 </div>
-                <div class="form-group">
-                    <label> เบอร์โทร:</label>
-                    <p><?php echo $objResult['order_tal'];?></p>
+                <div class="form-group d-flex">
+                    <label> เบอร์โทร: </label>
+                    <p>&nbsp; <?php echo $objResult['order_tal'];?></p>
                 </div>
-                <div class="form-group">
-                    <label >ที่อยู่</label>
-                    <p><?php echo $objResult['order_address'];?></p>
+                <div class="form-group d-flex">
+                    <label >ที่อยู่: </label> 
+                    <p>&nbsp; <?php echo $objResult['order_address'];?></p>
                 </div>
-                <div class="form-group">
+                <div class="form-group d-flex">
 
                     <!-- <a href="?page=order&&ProductID=" class="btn btn-primary btn-block btn-back ">เพิ่มลงตะกร้า</a> -->
                     
                 </div>
+                <?php } ?>
                 <!-- <input type="submit" class="btn btn-primary btn-block btn-back mx-auto" name="order_submit" value="สั่งซื้อสินค้า"> -->
 </form>
 

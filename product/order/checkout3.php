@@ -170,26 +170,30 @@ $row = mysqli_fetch_array($query);
 <div class="col-md-6 mt-5 ">
         
 <form action="?page=save_checkout" method="post" class="mx-auto"style="width:350px" enctype="multipart/form-data">  
-                <input type="text"  name="order_status" class="form-control" required="required" value="รอชำระเงิน" hidden >
+
+                
+                <input type="text"  name="order_shiping" class="form-control" required="required" value="รับที่ร้าน" hidden >
+                <input type="text"  name="order_status" class="form-control" required="required" value="สำเร็จแล้ว" hidden >
+
                 <div class="form-group">
-                    <label >รายละเอียด</label>
+                    <label hidden >รายละเอียด</label>
                 </div>
 
                 <div class="form-group">
-                    <label >ชื่อ:</label>
-                    <input type="text"  name="order_name" class="form-control" required="required" value="<?php echo $row['acc_name'];?>" >
+                    <label hidden >ชื่อ:</label>
+                    <input type="text" hidden name="order_name" class="form-control" required="required" value="<?php echo $row['acc_name'];?>" >
                 </div>
                 <div class="form-group">
-                    <label> อีเมล:</label>
-                    <input type="email"  name="order_email" class="form-control" required="required" readonly value="<?php echo $row['acc_email'];?>" >
+                    <label hidden> อีเมล:</label>
+                    <input type="email" hidden  name="order_email" class="form-control" required="required" readonly value="<?php echo $row['acc_email'];?>" >
                 </div>
                 <div class="form-group">
-                    <label> เบอร์โทร:</label>
-                    <input type="text"  name="order_tal" class="form-control" required="required" value="<?php echo $row['acc_phone'];?>" >
+                    <label hidden> เบอร์โทร:</label>
+                    <input type="text" hidden  name="order_tal" class="form-control" required="required" value="<?php echo $row['acc_phone'];?>" >
                 </div>
                 <div class="form-group">
-                    <label >ที่อยู่</label>
-                    <textarea class="form-control" name="order_address" required="required"  rows="3"><?php echo $row['acc_address'];?></textarea>
+                    <label hidden >ที่อยู่</label>
+                    <textarea class="form-control" hidden name="order_address" required="required"  rows="3"><?php echo $row['acc_address'];?></textarea>
                 </div>
                 <div class="form-group">
 

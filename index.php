@@ -227,6 +227,18 @@
             $output = str_replace('%TITLE%', $title, $output);
             echo $output;
             break;
+        case ('checkout2'):
+            include_once 'product/order/checkout2.php';
+            $title = "ตะกร้าสินค้า - DAWN (Cafe & Bar)";
+            $output = str_replace('%TITLE%', $title, $output);
+            echo $output;
+            break;
+        case ('checkout3'):
+            include_once 'product/order/checkout3.php';
+            $title = "ตะกร้าสินค้า - DAWN (Cafe & Bar)";
+            $output = str_replace('%TITLE%', $title, $output);
+            echo $output;
+            break;
         case ('save_checkout'):
             include_once 'product/order/save_checkout.php';
             $title = "ตะกร้าสินค้า - DAWN (Cafe & Bar)";
@@ -276,6 +288,11 @@
     }
     ?>
 
+<br>
+<br>
+<br>
+<br>
+<br>
 </body>
 
 </html>
