@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 14, 2022 at 06:17 PM
+-- Generation Time: Feb 17, 2022 at 01:45 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -69,7 +69,7 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`order_id`, `order_date`, `order_name`, `order_address`, `order_email`, `order_tal`, `order_key`, `status`, `order_track`, `order_shiping`) VALUES
-(1, '2022-02-14 16:23:17', 'เจมส์ จริงนะ', 'sohojfgjrgopijwrgjworjgwrg\r\n', '123@123.com', '1234123123', 'zEZB7dI0KqTm9cP', 'รอชำระเงิน', '', '');
+(8, '2022-02-15 20:04:16', 'ADMIN', 'no detail', 'asd@asd.com', 'no detail', 'XB6URjwYFk2mbTv', 'รอพนักงานรับ', '', 'เดลิเวอรี้');
 
 -- --------------------------------------------------------
 
@@ -89,7 +89,14 @@ CREATE TABLE `orders_detail` (
 --
 
 INSERT INTO `orders_detail` (`detail_id`, `order_id`, `pro_id`, `qty`) VALUES
-(1, 1, 1, 1);
+(1, 1, 1, 1),
+(2, 2, 1, 1),
+(3, 3, 1, 1),
+(4, 4, 1, 1),
+(5, 5, 1, 1),
+(6, 6, 1, 1),
+(7, 7, 1, 1),
+(8, 8, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -178,13 +185,13 @@ ALTER TABLE `account`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `order_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `orders_detail`
 --
 ALTER TABLE `orders_detail`
-  MODIFY `detail_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `detail_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `payment`
