@@ -42,6 +42,18 @@
             $output = str_replace('%TITLE%', $title, $output);
             echo $output;
             break;
+        case ('delivery_apply'):
+            include_once 'delivery/delivery_apply.php';
+            $title = "พนักงานจัดส่ง - DAWN (Cafe & Bar)";
+            $output = str_replace('%TITLE%', $title, $output);
+            echo $output;
+            break;
+        case ('delivery_order'):
+            include_once 'delivery/delivery_order.php';
+            $title = "พนักงานจัดส่ง - DAWN (Cafe & Bar)";
+            $output = str_replace('%TITLE%', $title, $output);
+            echo $output;
+            break;
         case ('delivery'):
             include_once 'delivery/delivery_home.php';
             $title = "พนักงานจัดส่ง - DAWN (Cafe & Bar)";

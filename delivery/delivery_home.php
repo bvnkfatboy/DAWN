@@ -1,3 +1,12 @@
+<?php
+
+include_once('include/navbar.php');
+
+$check_status = isset($_SESSION['auth-status']) ? $_SESSION['auth-status'] : ''; 
+
+if($check_status != 'member'){
+?>
+
 
 
 
@@ -5,8 +14,68 @@
 
 
 
+.column {
+  float: left;
+  width: 20%;
+  padding: 0 15px;
+  font-family: 'Kanit', sans-serif;
+  color: black;
+}
+
+.row {margin: 0;}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+@media screen and (max-width: 900px) {
+  .column {
+    width: 50%;
+
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+
+.product_cards {
+
+  padding: 16px;
+  text-align: center;
+
+}
+
+
+a{
+    color:black;
+    text-decoration:none;
+}
+
+a:hover{
+    color: rgb(100,100,100);
+    text-decoration:none;
+}
+
+.product_cards p {
+    
+    font-size: 14px;
+    word-wrap: break-word;
+}
+.product_name{
+    height: 25px;
+    width: 100%;
+}
 </style>
-<?php include_once('include/navbar.php') ?>
 
 <div class="container">
 
@@ -24,7 +93,34 @@
         </div>
     </div>
 </div>
+<div class="row mt-5 ">
+    
+
+
+    <div class="column">
+        <a href="?page=delivery_order">    
+            <div class="product_cards">
+                <i class="fas fa-shopping-cart mb-1 fa-5x mx-auto w-100 d-block"></i>
+                <div class="product_name "><p class="product_text">ข้อมูลออเดอร์</p></div>
+            </div>
+        </a>
+    </div>
+    <div class="column">
+        <a href="?page=delivery_apply">    
+            <div class="product_cards">
+                <i class="fas fa-shopping-cart mb-1 fa-5x mx-auto w-100 d-block"></i>
+                <div class="product_name "><p class="product_text">รับงาน</p></div>
+            </div>
+        </a>
+    </div>
 
 </div>
+    
+</div>
 
+<?php include_once('include/footer.php');?>
+
+<?php }else {
+    header('Location: ?page=home');
+}?>
 
