@@ -160,10 +160,7 @@ $row = mysqli_fetch_array($query);
                 </div>
 
                 <div class="form-group">
-                    <label>ค่าขนส่ง : <b>70</b>  บาท</label>
-                </div>
-                <div class="form-group">
-                    <label>รวม : <b><?php echo number_format($SumTotal+70,2);?></b> บาท</label>
+                    <label>รวม : <b><?php echo number_format($SumTotal,2);?></b> บาท</label>
                 </div>
   </form>
 </div>

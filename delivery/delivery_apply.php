@@ -39,7 +39,7 @@ if($check_admin != 'member' ){
 
     while($row = mysqli_fetch_array($result)){
         echo '    
-        <a href="?page=payments&&OrderID='.$row["order_id"].'" class="text-dark" style="text-decoration:none">
+        <a href="?page=showjob&&OrderID='.$row["order_id"].'" class="text-dark" style="text-decoration:none">
             <div class="card mx-auto" style="">
             <div class="card-body">
                 <h5 class="card-title">ออเดอร์ : '.$row["order_key"].' <p> โดย '.$row["order_name"].'</p> </h5>
