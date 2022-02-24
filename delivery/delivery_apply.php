@@ -32,7 +32,6 @@ if($check_admin != 'member' ){
 
 <a href="?page=delivery" class="btn btn-primary btn-block btn-back">กลับหน้าหลังบ้าน</a><br>
 
-
 <?php
     include_once('config.inc.php');
     $result = mysqli_query($conn,"SELECT * FROM orders  WHERE status='รอพนักงานรับ'");

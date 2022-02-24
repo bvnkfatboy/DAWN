@@ -75,6 +75,7 @@ a:hover{
     height: 25px;
     width: 100%;
 }
+
 </style>
 
 <div class="container">
@@ -95,6 +96,7 @@ a:hover{
 </div>
 <div class="row mt-5 ">
     
+    
 
 
     <div class="column">
@@ -105,6 +107,7 @@ a:hover{
             </div>
         </a>
     </div>
+
     <div class="column">
         <a href="?page=delivery_apply">    
             <div class="product_cards">
