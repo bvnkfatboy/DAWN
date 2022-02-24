@@ -86,7 +86,7 @@ a:hover{
         <div id="promote" class="carousel slide" style="max-width: 1700px;" data-ride="carousel" interval="4000" pause="hover">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                <a href="#"><img class="d-block w-100 "  src="dist/img/admin_system.jpg"></a>
+                <a href="#"><img class="d-block w-100 "  src="dist/img/admin_system.png"></a>
                 </div>
 
             </div>

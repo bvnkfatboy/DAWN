@@ -87,7 +87,7 @@ a:hover{
         <div id="promote" class="carousel slide" style="max-width: 1700px;" data-ride="carousel" interval="4000" pause="hover">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                <a href="#"><img class="d-block w-100 "  src="dist/img/delivery_system.jpg"></a>
+                <a href="#"><img class="d-block w-100 "  src="dist/img/delivery_system.png"></a>
                 </div>
 
             </div>
@@ -102,7 +102,7 @@ a:hover{
     <div class="column">
         <a href="?page=delivery_uapply">    
             <div class="product_cards">
-                <i class="fas fa-shopping-cart mb-1 fa-5x mx-auto w-100 d-block"></i>
+                <i class="fas fa-motorcycle mb-1 fa-5x mx-auto w-100 d-block"></i>
                 <div class="product_name "><p class="product_text">ออเดอร์ที่รับ</p></div>
             </div>
         </a>
@@ -120,7 +120,7 @@ a:hover{
     <div class="column">
         <a href="?page=delivery_apply">    
             <div class="product_cards">
-                <i class="fas fa-shopping-cart mb-1 fa-5x mx-auto w-100 d-block"></i>
+                <i class="fas fa-clipboard-check mb-1 fa-5x mx-auto w-100 d-block"></i>
                 <div class="product_name "><p class="product_text">รับงาน</p></div>
             </div>
         </a>
