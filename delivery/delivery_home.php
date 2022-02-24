@@ -100,6 +100,15 @@ a:hover{
 
 
     <div class="column">
+        <a href="?page=delivery_uapply">    
+            <div class="product_cards">
+                <i class="fas fa-shopping-cart mb-1 fa-5x mx-auto w-100 d-block"></i>
+                <div class="product_name "><p class="product_text">ออเดอร์ที่รับ</p></div>
+            </div>
+        </a>
+    </div>
+
+    <div class="column">
         <a href="?page=delivery_order">    
             <div class="product_cards">
                 <i class="fas fa-shopping-cart mb-1 fa-5x mx-auto w-100 d-block"></i>

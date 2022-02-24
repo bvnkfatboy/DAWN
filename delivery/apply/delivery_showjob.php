@@ -31,7 +31,7 @@ if($check_admin != 'member' ){
 <?php include_once('config.inc.php') ?>
 <div class="container">
 
-<a href="?page=admin_approve" class="btn btn-primary btn-block btn-back">กลับหน้าหน้าตรวจสอบ</a><br>
+<a href="?page=delivery" class="btn btn-primary btn-block btn-back">กลับหน้าหลังบ้าน</a><br>
 
 <div class="row">
     <div class="col-md-12">
@@ -162,8 +162,8 @@ $objResult = mysqli_fetch_array($objQuery);
   
 </div>
 
-<a href="?page=delivery_app&&OrderID=<?php echo $objResult['order_id'] ?>&&order_key=<?php echo $objResult['order_key'] ?>" class="btn btn-primary btn-block btn-back">ยืนยันชำระเงิน</a>
-<a href="?page=payments_del&&OrderID=<?php echo $objResult['order_id'] ?>&&order_key=<?php echo $objResult['order_key'] ?>" class="btn btn-primary btn-block btn-back">ยกเลิกชำระเงิน</a>
+<a href="?page=delivery_app&&OrderID=<?php echo $objResult['order_id'] ?>&&order_key=<?php echo $objResult['order_key'] ?>" class="btn btn-primary btn-block btn-back">รับออเดอร์</a>
+<a href="?page=delivery_deapp&&OrderID=<?php echo $objResult['order_id'] ?>&&order_key=<?php echo $objResult['order_key'] ?>" class="btn btn-primary btn-block btn-back">ยกเลิกออเดอร์</a>
     
 </div>
 <?php include_once('include/footer.php');?>

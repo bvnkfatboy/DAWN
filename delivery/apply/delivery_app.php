@@ -23,7 +23,8 @@ if($query){
 
     $sql3 = "INSERT INTO delivery (order_id,order_key,delivery_name) VALUE ('".$row['order_id']."','".$_GET["order_key"]."','".$getnamerow['acc_name']."')";
     $query3 = mysqli_query($conn,$sql3);
-
+    $sql4 = "UPDATE orders SET order_rider = '".$getnamerow['acc_name']."' , order_rider_id = '".$_SESSION["auth-id"]."'  WHERE order_id ='".$row['order_id']."' ";
+    $query4 = mysqli_query($conn,$sql4);
     header('Location: ?page=delivery');
     exit;
 

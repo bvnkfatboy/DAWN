@@ -1,56 +1,41 @@
+<?php
 
-<?php include_once('include/navbar.php') ?>
-<?php include_once('config.inc.php') ?>
+include_once('include/navbar.php');
+
+$check_admin = isset($_SESSION['auth-status']) ? $_SESSION['auth-status'] : ''; 
+
+if($check_admin != 'member' ){
+
+?>
+
 
 <style>
-.table>tbody>tr>td, .table>tfoot>tr>td{
-    vertical-align: middle;
-}
-
-.btn-back {        
-        max-width: 150px;
+    .btn-back {        
+        max-width: 180px;
         border-radius: 2px;
         font-size: 15px;
         font-weight: bold;
         background-color: black;
         border: 1px black;
-        color:white;
+        margin-top:30px;
+        margin-right:auto;
+        margin-left:30px;
     }
 
-.btn-back:hover{
-    background-color: whitesmoke;
-    color: black;
+    .btn-back:hover{
+        background-color: whitesmoke;
+        color: black;
 
-}
-
-.warpper{
-	width:100%;
-	height:50px;
-	background:whitesmoke;
-	margin-top:30px
-
-}
-
-.bartotal{
-	height:100%;
-}
-
-.btn-checkout{
-
-	margin-left:80%;
-}
-
-.sumtotal{
-	margin-top:5px;
-}
+    }
 </style>
-
-
+<?php include_once('config.inc.php') ?>
 <div class="container">
 
-<br>
+<a href="?page=delivery" class="btn btn-primary btn-block btn-back">กลับหน้าหลังบ้าน</a><br>
 
-<table id="cart" class="table table-hover table-condensed">
+<div class="row">
+    <div class="col-md-12">
+    <table id="cart" class="table table-hover table-condensed">
 	<thead>
 		<tr>
 			<th style="width:60%">Product</th>
@@ -69,7 +54,7 @@
 
             $strSQL2 = "SELECT * FROM orders_detail WHERE order_id = '".$_GET["OrderID"]."' ";
             $objQuery2 = mysqli_query($conn,$strSQL2);
-
+            
             while( $objResult2 = mysqli_fetch_array($objQuery2) )
             {
                     $strSQL3 = "SELECT * FROM product WHERE pro_id = '".$objResult2["pro_id"]."' ";
@@ -81,7 +66,7 @@
                 <tr>
                     <td data-th="Product">
                         <div class="row">
-                            <div class="col-md-3"><img src="<?php echo $objResult3['pro_image']; ?>"  style="max-width:100px"/></div>
+
                             <div class="col-md-9">
                                 <p class="nomargin mt-1"><?php echo $objResult3['pro_name']; ?></p>
                                 <small>ไซต์: <?php echo $objResult3['pro_size']; ?></small>
@@ -109,11 +94,10 @@
 <?php 
 
 $strSQL = "SELECT * FROM orders WHERE order_id = '".$_GET["OrderID"]."' ";
-$objQuery = mysqli_query($conn, $strSQL) ;
+$objQuery = mysqli_query($conn, $strSQL);
 $objResult = mysqli_fetch_array($objQuery);
 
 ?>
-
 <hr>
 <div class="row">
 
@@ -125,99 +109,77 @@ $objResult = mysqli_fetch_array($objQuery);
                 <div class="form-group">
                 <label>ราคาสินค้า : <b><?php echo number_format($SumTotal,2);?></b>  บาท</label>
                 </div>
-                <?php if($objResult['order_shiping'] == 'บริษัทขนส่ง'){?>
-                <div class="form-group">
-                    <label>ค่าขนส่ง : <b>70</b>  บาท</label>
-                </div>
-                <div class="form-group">
-                    <label>รวม : <b><?php echo number_format($SumTotal+70,2);?></b> บาท</label>
-                </div>
 
-                <?php } elseif ( $objResult['order_shiping'] == 'เดลิเวอรี้'){ ?>
                 <div class="form-group">
                     <label>ค่าขนส่ง : <b>20</b>  บาท</label>
                 </div>
                 <div class="form-group">
                     <label>รวม : <b><?php echo number_format($SumTotal+20,2);?></b> บาท</label>
                 </div>
-                <?php } ?>
+
                 <div class="form-group">
                     <label>สถานะสั่งซื้อ : <b><?php echo $objResult['status'];?></b></label>
                 </div>
-
                 <div class="form-group">
                     <label>การให้บริการ : <b><?php echo $objResult['order_shiping'];?></b></label>
                 </div>
-
-                <?php if($objResult['order_shiping'] == 'บริษัทขนส่ง' && $objResult['order_shiping'] != 'เดลิเวอรี้'){?>
-                
-               
-                <div class="form-group">
-                    <label>เลขขนส่ง : <b><?php echo $objResult['order_track'];?></b></label>
-                </div>
-
-                 <?php } ?>
-
-
-                 <?php if($objResult['order_shiping'] == 'เดลิเวอรี้'){?>
-
-                <?php if($delivery_row['order_id'] != $objResult['order_id']) {?>
-                <div class="form-group">
-                    <label>ชื่อไรเดอร์ : <b>กำลังค้นหาไรเดอร์</b></label>
-                </div>
-                <?php }else{?>
+                <?php 
+                $delivery = "SELECT * FROM delivery WHERE order_id = '".$_GET["OrderID"]."' ";
+                $delivery_query = mysqli_query($conn,$delivery);
+                $delivery_row = mysqli_fetch_array($delivery_query);
+                ?>
                 <div class="form-group">
                     <label>ชื่อไรเดอร์ : <b><?php echo $delivery_row['delivery_name'];?></b></label>
                 </div>
-                <?php }?>
-                 <?php }?>
+
   </form>
 </div>
 <div class="col-md-6 mt-5 ">
         
 <form action="?page=save_checkout" method="post" class="mx-auto"style="width:350px" enctype="multipart/form-data">  
 
-                <?php if($objResult['order_shiping'] != 'รับที่ร้าน'){?>
-                <div class="form-group ">
+                <div class="form-group">
                     <label >รายละเอียด</label>
                 </div>
 
-                <div class="form-group d-flex">
-                    <label >ชื่อ: </label>
-                    <p>&nbsp; <?php echo $objResult['order_name'];?></p>
+                <div class="form-group">
+                    <label >ชื่อ:</label>
+                    <p><?php echo $objResult['order_name'];?></p>
                 </div>
-                <div class="form-group d-flex">
-                    <label> อีเมล: </label>
-                    <p>&nbsp; <?php echo $objResult['order_email'];?></p>
+                <div class="form-group">
+                    <label> อีเมล:</label>
+                    <p><?php echo $objResult['order_email'];?></p>
                 </div>
-                <div class="form-group d-flex">
-                    <label> เบอร์โทร: </label>
-                    <p>&nbsp; <?php echo $objResult['order_tal'];?></p>
+                <div class="form-group">
+                    <label> เบอร์โทร:</label>
+                    <p><?php echo $objResult['order_tal'];?></p>
                 </div>
-                <div class="form-group d-flex">
-                    <label >ที่อยู่: </label> 
-                    <p>&nbsp; <?php echo $objResult['order_address'];?></p>
+                <div class="form-group">
+                    <label >ที่อยู่</label>
+                    <p><?php echo $objResult['order_address'];?></p>
                 </div>
-                <div class="form-group d-flex">
+                
+                <div class="form-group">
 
                     <!-- <a href="?page=order&&ProductID=" class="btn btn-primary btn-block btn-back ">เพิ่มลงตะกร้า</a> -->
                     
                 </div>
-                <?php } ?>
                 <!-- <input type="submit" class="btn btn-primary btn-block btn-back mx-auto" name="order_submit" value="สั่งซื้อสินค้า"> -->
 </form>
 
 </div>
 </div>
-    
+
+    </div>
+  
 </div>
 
+<a href="?page=delivery_app2&&OrderID=<?php echo $objResult['order_id'] ?>&&order_key=<?php echo $objResult['order_key'] ?>" class="btn btn-primary btn-block btn-back">ส่งมอบเรียบร้อย</a>
+<a href="?page=delivery_deapp&&OrderID=<?php echo $objResult['order_id'] ?>&&order_key=<?php echo $objResult['order_key'] ?>" class="btn btn-primary btn-block btn-back">ยกเลิกออเดอร์</a>
+    
+</div>
+<?php include_once('include/footer.php');?>
+<?php }else {
+    header('Location: ?page=home');
+}?>
 
-
-
-
-
-
-
-
-<?php include_once('include/footer.php') ?>
