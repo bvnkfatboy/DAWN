@@ -17,7 +17,7 @@
 </head>
 <body>
     <div class="error">
-    <img src="dist/img/logo_white.png"  class="logo">
+    <img src="dist/img/logo_dawn.png"  class="logo">
     </div>
     <img src="dist/img/error404.png" class="logo_error" >
 </body>
