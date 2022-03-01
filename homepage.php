@@ -50,7 +50,7 @@ h3 {
 
 <div class="bgimg-1">
   <div class="caption">
-    <span class="border">เริ่มวันดีๆ</span><br><br>
+    <span class="border">เริ่มวันดีๆ</span><br><br><br>
     <span class="border">ที่ DAWN (Cafe & Bar)</span>
   </div>
 </div>

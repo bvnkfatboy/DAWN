@@ -196,6 +196,12 @@
             $output = str_replace('%TITLE%', $title, $output);
             echo $output;
             break;
+        case ('admin_promotion'):
+            include_once 'admin/admin_promotion.php';
+            $title = "หลังร้าน - DAWN (Cafe & Bar)";
+            $output = str_replace('%TITLE%', $title, $output);
+            echo $output;
+            break;
 
         // admin member
         case ('member_edit'):
@@ -324,6 +330,37 @@
         case ('track_set'):
             include_once 'admin/tracking/tracking_set.php';
             $title = "แจ้งเลขพัสดุ - DAWN (Cafe & Bar)";
+            $output = str_replace('%TITLE%', $title, $output);
+            echo $output;
+            break;
+
+        case ('promotion_add'):
+            include_once 'admin/promotion/promotion_add.php';
+            $title = "โปรโมชั่น - DAWN (Cafe & Bar)";
+            $output = str_replace('%TITLE%', $title, $output);
+            echo $output;
+            break;
+        case ('promotion_del'):
+            include_once 'admin/promotion/promotion_del.php';
+            $title = "โปรโมชั่น - DAWN (Cafe & Bar)";
+            $output = str_replace('%TITLE%', $title, $output);
+            echo $output;
+            break;
+        case ('promotion_edit'):
+            include_once 'admin/promotion/promotion_edit.php';
+            $title = "โปรโมชั่น - DAWN (Cafe & Bar)";
+            $output = str_replace('%TITLE%', $title, $output);
+            echo $output;
+            break;
+        case ('promotion_view'):
+            include_once 'promotion/promotion_view.php';
+            $title = "โปรโมชั่น - DAWN (Cafe & Bar)";
+            $output = str_replace('%TITLE%', $title, $output);
+            echo $output;
+            break;
+        case ('promotion'):
+            include_once 'promotion.php';
+            $title = "โปรโมชั่น - DAWN (Cafe & Bar)";
             $output = str_replace('%TITLE%', $title, $output);
             echo $output;
             break;

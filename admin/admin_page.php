@@ -140,6 +140,14 @@ a:hover{
             </div>
         </a>
     </div>
+    <div class="column">
+        <a href="?page=admin_promotion">    
+            <div class="product_cards">
+                <i class="fas fa-ad mb-1 fa-5x mx-auto w-100 d-block"></i>
+                <div class="product_name "><p class="product_text">โปรโมชั่น</p></div>
+            </div>
+        </a>
+    </div>
 
 
 
