@@ -84,7 +84,6 @@
                             <div class="col-md-3"><img src="<?php echo $objResult3['pro_image']; ?>"  style="max-width:100px"/></div>
                             <div class="col-md-9">
                                 <p class="nomargin mt-1"><?php echo $objResult3['pro_name']; ?></p>
-                                <small>ไซต์: <?php echo $objResult3['pro_size']; ?></small>
                             </div>
                         </div>
                     </td>
@@ -160,7 +159,11 @@ $objResult = mysqli_fetch_array($objQuery);
 
 
                  <?php if($objResult['order_shiping'] == 'เดลิเวอรี้'){?>
-
+                    <?php 
+                $delivery = "SELECT * FROM delivery WHERE order_id = '".$_GET["OrderID"]."' ";
+                $delivery_query = mysqli_query($conn,$delivery);
+                $delivery_row = mysqli_fetch_array($delivery_query);
+                ?>
                 <?php if($delivery_row['order_id'] != $objResult['order_id']) {?>
                 <div class="form-group">
                     <label>ชื่อไรเดอร์ : <b>กำลังค้นหาไรเดอร์</b></label>

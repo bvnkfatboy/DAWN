@@ -67,7 +67,6 @@ if($check_admin == 'admin' ){
 
                             <div class="col-md-9">
                                 <p class="nomargin mt-1"><?php echo $objResult3['pro_name']; ?></p>
-                                <small>ไซต์: <?php echo $objResult3['pro_size']; ?></small>
                             </div>
                         </div>
                     </td>

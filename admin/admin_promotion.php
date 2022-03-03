@@ -104,6 +104,9 @@ if($check_admin == 'admin' ){
     height: 25px;
     width: 100%;
     margin-top: 10px;
+    text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
 }
 
 .btn-editpro {        
