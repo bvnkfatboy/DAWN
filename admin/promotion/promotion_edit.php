@@ -84,7 +84,7 @@ $check_admin = isset($_SESSION['auth-status']) ? $_SESSION['auth-status'] : '';
 
 <style>
     .btn-back {        
-        max-width: 150px;
+        max-width: 170px;
         border-radius: 2px;
         font-size: 15px;
         font-weight: bold;
@@ -206,7 +206,7 @@ extract($row);
 
 <div class="container">
 
-<a href="?page=admin_product" class="btn btn-primary btn-block btn-back">กลับหน้าจัดการสินค้า</a><br>
+<a href="?page=admin_promotion" class="btn btn-primary btn-block btn-back">กลับหน้าจัดการโปรโมชั่น</a><br>
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-7">

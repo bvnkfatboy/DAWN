@@ -51,7 +51,7 @@ if($check_admin != 'member' ){
 <div class="container">
     
 
-<a href="?page=delivery" class="btn btn-primary btn-block btn-back">กลับหน้าเมนูพนักงาน</a><br>
+<a href="?page=delivery" class="btn btn-primary btn-block btn-back">กลับหน้าพนักงาน</a><br>
 
 
 <h1 class="text-center">ข้อมูลออเดอร์</h1>

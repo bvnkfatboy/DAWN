@@ -11,6 +11,7 @@ if($check_admin == 'admin' ){
     if (isset($_POST['pro-insert'])) {
 
 
+        $pro_name = $_POST['pro-name'];
         $pro_detail = $_POST['pro-detail'];
 
 
@@ -23,8 +24,8 @@ if($check_admin == 'admin' ){
             $path_copy = $path.$file;
             move_uploaded_file($_FILES['inputfile']['tmp_name'],$path_copy);
 
-            $sql = "INSERT INTO promotion (pro_detail,pro_img)
-                    VALUES (' $pro_detail ',' $path_copy') ";
+            $sql = "INSERT INTO promotion (pro_name,pro_detail,pro_img)
+                    VALUES ('$pro_name',' $pro_detail ',' $path_copy') ";
             $query = mysqli_query($conn, $sql);
             // header('location: ?page=product_insert');
             if($query){ ?>
@@ -213,7 +214,9 @@ if($check_admin == 'admin' ){
             <form action="" method="post" enctype="multipart/form-data">  
             <input type="file" name="inputfile" id="inputfile" hidden>
                 <div class="form-group">
-
+                <label>ชื่อโปรโมชั่น</label>
+                    <input type="text" class="form-control"  name="pro-name" required="required">
+                </div>
   
                 <div class="form-group">
                     <label >รายละเอียด</label>

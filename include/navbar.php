@@ -104,7 +104,7 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">โปรโมชั่น</a>
+        <a class="nav-link" href="?page=promotion">โปรโมชั่น</a>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">

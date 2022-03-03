@@ -151,6 +151,7 @@ if($check_admin == 'admin' ){
                 <div class="product_name"><b class="product_text">'.$row['pro_name'].'</b></div>
                 
             </div>
+            <a href="?page=promotion_view&&pro_id='.$row['pro_id'].'" class="btn btn-primary btn-block btn-editpro">ดูรายละเอียด</a>
             <a href="?page=promotion_edit&&pro_id='.$row['pro_id'].'" class="btn btn-primary btn-block btn-editpro">แก้ไขโปรโมชั่น</a>
         </div> 
         

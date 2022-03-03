@@ -31,7 +31,7 @@ if($check_admin != 'member' ){
 <?php include_once('config.inc.php') ?>
 <div class="container">
 
-<a href="?page=delivery" class="btn btn-primary btn-block btn-back">กลับหน้าหลังบ้าน</a><br>
+<a href="?page=delivery" class="btn btn-primary btn-block btn-back">กลับหน้าพนักงาน</a><br>
 
 <div class="row">
     <div class="col-md-12">

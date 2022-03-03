@@ -340,12 +340,6 @@
             $output = str_replace('%TITLE%', $title, $output);
             echo $output;
             break;
-        case ('promotion_del'):
-            include_once 'admin/promotion/promotion_del.php';
-            $title = "โปรโมชั่น - DAWN (Cafe & Bar)";
-            $output = str_replace('%TITLE%', $title, $output);
-            echo $output;
-            break;
         case ('promotion_edit'):
             include_once 'admin/promotion/promotion_edit.php';
             $title = "โปรโมชั่น - DAWN (Cafe & Bar)";
