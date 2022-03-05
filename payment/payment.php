@@ -89,6 +89,7 @@ if(isset($_POST['pay-app'])){
             $query = mysqli_query($conn,$sql);
             $sql2 = "UPDATE orders SET status = 'พนักงานกำลังตรวจสอบ' WHERE order_key ='".$pay_key."' ";
             $query2 = mysqli_query($conn,$sql2);
+            mysqli_set_charset($conn,"utf8");
             if($query){?>
                 <script>
                     Swal.fire({
