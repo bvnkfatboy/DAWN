@@ -119,27 +119,27 @@ extract($row);
 
     <input type="hidden" class="form-control"  value="<?=$acc_id ?>" id="auth-id" name="auth-id" >
         <div class="form-group">
-        <label for="auth-name">NAME</label>
-            <input type="text" class="form-control" placeholder="Name" value="<?=$acc_name ?>" id="auth-name" name="auth-name" required="required">
+        <label for="auth-name">ชื่อ - นามสกุล</label>
+            <input type="text" class="form-control" placeholder="กรอกชื่อ - นามสกุล" value="<?=$acc_name ?>" id="auth-name" name="auth-name" required="required">
         </div>
         <div class="form-group">
-        <label for="auth-email">EMAIL</label>
-            <input type="email" class="form-control" placeholder="Email" value="<?=$acc_email ?>" id="auth-email" name="auth-email" required="required">
+        <label for="auth-email">อีเมล</label>
+            <input type="email" class="form-control" placeholder="กรอกอีเมล" value="<?=$acc_email ?>" id="auth-email" name="auth-email" required="required">
         </div>
         <div class="form-group">
-            <label for="auth-address">ADDRESS</label>
+            <label for="auth-address">ที่อยู่</label>
             <textarea class="form-control" id="auth-address" name="auth-address"  rows="3"><?=$acc_address ?></textarea>
         </div>
         <div class="form-group">
-        <label for="auth-phone">PHONE</label>
+        <label for="auth-phone">เบอร์โทรศัพท์</label>
             <input type="text" class="form-control" placeholder="Phone" value="<?=$acc_phone ?>" id="auth-phone" name="auth-phone" required="required">
         </div>
         <div class="form-group">
-            <button type="submit" name="auth-update" class="btn btn-primary btn-block">UPDATE</button>
+            <button type="submit" name="auth-update" class="btn btn-primary btn-block">แก้ไขข้อมูล</button>
         </div>
 
     </form>
-    <p class="text-center"><a href="?page=profile">Return to Profile page</a></p>
+    <p class="text-center"><a href="?page=profile"> กลับหน้ารายละเอียดบัญชี</a></p>
 </div>
 
 

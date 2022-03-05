@@ -123,7 +123,7 @@ extract($row);
 ?>
 <div class="container">
 
-<a href="?page=admin" class="btn btn-primary btn-block btn-back">กลับหน้าสมาชิก</a><br>
+<a href="?page=admin_member" class="btn btn-primary btn-block btn-back">กลับหน้าสมาชิก</a><br>
 <div class="login-form">
     <form action="" method="post">
 

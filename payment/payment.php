@@ -128,6 +128,9 @@ if(isset($_POST['pay-app'])){
     <?php }
 }
 ?>
+ิ
+<div class="container">
+
 <div class="login-form">
     <form action="" method="post" enctype="multipart/form-data">
         <div class="form-group">
@@ -142,11 +145,9 @@ if(isset($_POST['pay-app'])){
         <label >ธนาคารที่โอน</label>
 
                 <select  class="form-control" name="pay-bank">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+                <option>กรุงไทย</option>
+                <option>กรุงเทพ</option>
+                <option>ไทยพาณิชย์</option>
                 </select>
         </div>
 
@@ -162,11 +163,13 @@ if(isset($_POST['pay-app'])){
  
  <br>
         <div class="form-group">
-            <button type="submit" name="pay-app" class="btn btn-primary btn-block">CREATE</button>
+            <button type="submit" name="pay-app" class="btn btn-primary btn-block">แจ้งชำระเงิน</button>
         </div>
 
     </form>
-    <p class="text-center"><a href="?page=home">Return to Store</a></p>
+    <p class="text-center"><a href="?page=home">กลับหน้าหลัก</a></p>
+</div>
+    
 </div>
 
 <?php include_once('include/footer.php') ?>

@@ -170,6 +170,7 @@ $row = mysqli_fetch_array($query);
 <div class="col-md-6 mt-5 ">
         
 <form action="?page=save_checkout" method="post" class="mx-auto"style="width:350px" enctype="multipart/form-data">  
+                <input type="text"  name="order_shiping" class="form-control" required="required" value="บริษัทขนส่ง" hidden >
                 <input type="text"  name="order_status" class="form-control" required="required" value="รอชำระเงิน" hidden >
                 <div class="form-group">
                     <label >รายละเอียด</label>

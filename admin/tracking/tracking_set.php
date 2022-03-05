@@ -45,6 +45,9 @@ if($check_admin == 'admin' ){
 
     }
 </style>
+<div class="container">
+    
+
 <?php include_once('config.inc.php') ?>
 <a href="?page=admin_approve" class="btn btn-primary  btn-back">กลับหน้าหน้าตรวจสอบ</a><br><br>
 
@@ -53,10 +56,10 @@ if($check_admin == 'admin' ){
     <table id="cart" class="table table-hover table-condensed">
 	<thead>
 		<tr>
-			<th style="width:60%">Product</th>
-			<th style="width:10%">Price</th>
-			<th style="width:10%">Quantity</th>
-			<th style="width:10%" class="text-center">Subtotal</th>
+			<th style="width:60%">ชื่อ</th>
+			<th style="width:10%">ราคา</th>
+			<th style="width:10%"></th>
+			<th style="width:10%" class="text-center">ราคารวม</th>
 			<th style="width:10%"></th>
 		</tr>
 	</thead>
@@ -204,7 +207,7 @@ $objResult = mysqli_fetch_array($objQuery);
 
     </div>
 </div>
-
+</div>
 <?php include_once('include/footer.php');?>
 <?php }else {
     header('Location: ?page=home');

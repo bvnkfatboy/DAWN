@@ -53,10 +53,10 @@
 <table id="cart" class="table table-hover table-condensed">
 	<thead>
 		<tr>
-			<th style="width:60%">Product</th>
-			<th style="width:10%">Price</th>
-			<th style="width:10%">Quantity</th>
-			<th style="width:10%" class="text-center">Subtotal</th>
+			<th style="width:60%">ชื่อ</th>
+			<th style="width:10%">ราคา</th>
+			<th style="width:10%"></th>
+			<th style="width:10%" class="text-center">ราคารวม</th>
 			<th style="width:10%"></th>
 		</tr>
 	</thead>

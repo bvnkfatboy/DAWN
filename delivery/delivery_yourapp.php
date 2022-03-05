@@ -31,7 +31,8 @@ if($check_admin != 'member' ){
 <div class="container">
 
 <a href="?page=delivery" class="btn btn-primary btn-block btn-back">กลับหน้าพนักงาน</a><br>
-
+<br>
+<h1 class="text-center"> ออเดอร์ที่กำลังรับอยู่ </h1>
 <?php
     include_once('config.inc.php');
     $check_id = isset($_SESSION['auth-id']) ? $_SESSION['auth-id'] : ''; 

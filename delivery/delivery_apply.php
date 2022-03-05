@@ -31,7 +31,8 @@ if($check_admin != 'member' ){
 <div class="container">
 
 <a href="?page=delivery" class="btn btn-primary btn-block btn-back">กลับหน้าพนักงาน</a><br>
-
+ิ<br>
+<h1 class="text-center"> รายการออเดอร์ที่กำลังรอรับ </h1>
 <?php
     include_once('config.inc.php');
     $result = mysqli_query($conn,"SELECT * FROM orders  WHERE status='รอพนักงานรับ'");

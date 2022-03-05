@@ -32,7 +32,8 @@ if($check_admin == 'admin' ){
 
 <a href="?page=admin" class="btn btn-primary btn-block btn-back">กลับหน้าหลังบ้าน</a><br>
 
-
+<br>
+<h1 class="text-center">หน้ายืนยันชำระเงิน</h1>
 <?php
     include_once('config.inc.php');
     $result = mysqli_query($conn,"SELECT * FROM orders  WHERE status='พนักงานกำลังตรวจสอบ'");

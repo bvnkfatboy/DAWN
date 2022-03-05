@@ -22,7 +22,7 @@
 </style>
 
 <?php
-
+include_once('config.inc.php');
 $sql = "SELECT * FROM promotion WHERE pro_id='".$_GET["pro_id"]."' ";
 // $sql = "SELECT * FROM product WHERE pro_id=1 ";
 $result = mysqli_query($conn, $sql);

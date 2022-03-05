@@ -29,6 +29,8 @@ if($check_admin == 'admin' ){
     }
 </style>
 <?php include_once('config.inc.php') ?>
+<div class="container">
+
 <a href="?page=admin_approve" class="btn btn-primary btn-block btn-back">กลับหน้าหน้าตรวจสอบ</a><br>
 
 <div class="row">
@@ -194,7 +196,8 @@ $objResult = mysqli_fetch_array($objQuery);
 
 <a href="?page=payments_app&&OrderID=<?php echo $objResult['order_id'] ?>&&order_key=<?php echo $objResult['order_key'] ?>" class="btn btn-primary btn-block btn-back">ยืนยันชำระเงิน</a>
 <a href="?page=payments_del&&OrderID=<?php echo $objResult['order_id'] ?>&&order_key=<?php echo $objResult['order_key'] ?>" class="btn btn-primary btn-block btn-back">ยกเลิกชำระเงิน</a>
-
+    
+</div>
 <?php include_once('include/footer.php');?>
 <?php }else {
     header('Location: ?page=home');
