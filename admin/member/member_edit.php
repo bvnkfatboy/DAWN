@@ -129,23 +129,23 @@ extract($row);
 
     <input type="hidden" class="form-control"  value="<?=$acc_id ?>" id="auth-id" name="auth-id" >
         <div class="form-group">
-        <label for="auth-name">NAME</label>
+        <label for="auth-name">ชื่อ - สกุล</label>
             <input type="text" class="form-control" placeholder="Name" value="<?=$acc_name ?>" id="auth-name" name="auth-name" required="required">
         </div>
         <div class="form-group">
-        <label for="auth-email">EMAIL</label>
+        <label for="auth-email">อีเมล</label>
             <input type="email" class="form-control" placeholder="Email" value="<?=$acc_email ?>" id="auth-email" name="auth-email" required="required">
         </div>
         <div class="form-group">
-            <label for="auth-address">ADDRESS</label>
+            <label for="auth-address">ที่อยู่</label>
             <textarea class="form-control" id="auth-address" name="auth-address"  rows="3"><?=$acc_address ?></textarea>
         </div>
         <div class="form-group">
-        <label for="auth-phone">PHONE</label>
+        <label for="auth-phone">เบอร์โทรศัพท์</label>
             <input type="text" class="form-control" placeholder="Phone" value="<?=$acc_phone ?>" id="auth-phone" name="auth-phone" required="required">
         </div>
         <div class="form-group">
-        <label for="auth-status">STATUS</label>
+        <label for="auth-status">สถานะ</label>
             <!-- <input type="text" class="form-control" placeholder="Phone" value="" id="auth-status" name="auth-status" required="required"> -->
 
             <select id="auth-status" name="auth-status" class="form-control">
@@ -156,7 +156,7 @@ extract($row);
         </select>
         </div>
         <div class="form-group">
-            <button type="submit" name="auth-update" class="btn btn-primary btn-block btn-update">UPDATE</button>
+            <button type="submit" name="auth-update" class="btn btn-primary btn-block btn-update">แก้ไข</button>
         </div>
 
     </form>

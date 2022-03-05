@@ -83,7 +83,8 @@ if(!isset($_SESSION["intLine"]))
 	$Total = 0;
 	$SumTotal = 0;
 	include_once('config.inc.php');
-
+    ob_start();
+    session_start();
 	for($i=0;$i<=(int)$_SESSION["intLine"];$i++)
 	{
 		if($_SESSION["strProductID"][$i] != "")
