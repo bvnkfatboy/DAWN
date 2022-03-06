@@ -124,7 +124,7 @@ extract($row);
         </div>
         <div class="form-group">
         <label for="auth-email">อีเมล</label>
-            <input type="email" class="form-control" placeholder="กรอกอีเมล" value="<?=$acc_email ?>" id="auth-email" name="auth-email" required="required">
+            <input type="email" class="form-control" placeholder="กรอกอีเมล" value="<?=$acc_email ?>"  readonly id="auth-email" name="auth-email" required="required">
         </div>
         <div class="form-group">
             <label for="auth-address">ที่อยู่</label>
