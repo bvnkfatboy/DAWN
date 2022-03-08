@@ -77,21 +77,21 @@ if($check_admin == 'admin' ){
     $result = mysqli_query($conn,"SELECT * FROM account ORDER BY acc_id asc");
 
     while($row = mysqli_fetch_array($result)){
-        echo "
+        ?>
        <tr class='my-auto'>
-        <td style='width:400px'>".$row['acc_email']."</td>
-        <td style='width:300px'>".$row['acc_name']."</td>
+        <td style='width:400px'><?php echo $row['acc_email']; ?></td>
+        <td style='width:300px'><?php echo $row['acc_name']; ?></td>
         <td style='width:100px'>
-        <a href='?page=member_edit&&acc-id=$row[0]' class='btn btn-warning btn-block btn-edit'>แก้ไข</a>
+        <a href='?page=member_edit&&acc-id=<?php echo $row[0]; ?>' class='btn btn-warning btn-block btn-edit'>แก้ไข</a>
         </td>
         <td style='width:100px'>
-        <a href='?page=member_remove&&acc-id=$row[0]'   class='btn btn-warning btn-block btn-edit'>ลบ</a>
+        <a href='?page=member_remove&&acc-id=<?php echo $row[0]; ?>' onClick="return confirm('คุณต้องการที่จะลบข้อมูลนี้หรือไม่ ?')"  class='btn btn-warning btn-block btn-edit'>ลบ</a>
         </td>
       </tr>
         
 
         
-        ";
+       <?php 
 
     }
 

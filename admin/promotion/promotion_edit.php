@@ -243,7 +243,7 @@ extract($row);
 
                 <div class="form-group">
                     <button type="submit" name="pro-update" class="btn btn-primary btn-block">อัพเดตโปรโมชั่น</button>
-                    <button  name="pro-delete" class="btn btn-primary btn-block">ลบโปรโมชั่น</button>
+                    <button  name="pro-delete" onClick="return confirm('คุณต้องการที่จะลบข้อมูลนี้หรือไม่ ?')" class="btn btn-primary btn-block">ลบโปรโมชั่น</button>
                 </div>
             </form>
 

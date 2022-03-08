@@ -119,7 +119,7 @@ if(!isset($_SESSION["intLine"]))
 			<td data-th="Subtotal" class="text-center"><?php echo number_format($Total,2);?></td>
 			<td class="actions" data-th="">
 			
-				<a href="?page=order_delete&&Line=<?php echo $i;?>" class="btn btn-clear btn-back btn-clear">ลบ</a>			
+				<a href="?page=order_delete&&Line=<?php echo $i;?>" onClick="return confirm('คุณต้องการที่จะลบข้อมูลนี้หรือไม่ ?')" class="btn btn-clear btn-back btn-clear">ลบ</a>			
 			</td>
 		</tr>
 
