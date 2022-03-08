@@ -216,6 +216,12 @@
             $output = str_replace('%TITLE%', $title, $output);
             echo $output;
             break;
+        case ('member_insert'):
+            include_once 'admin/member/member_insert.php';
+            $title = "หลังร้าน - DAWN (Cafe & Bar)";
+            $output = str_replace('%TITLE%', $title, $output);
+            echo $output;
+            break;
 
         // admin product
         case ('product_edit'):
