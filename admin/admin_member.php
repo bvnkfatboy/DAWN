@@ -55,7 +55,7 @@ if($check_admin == 'admin' ){
 
 <table class="table table-hover mx-auto"  style="max-width:1024px;">
 <h1 class="text-center">ข้อมูลสมาชิก</h1>
-<a href="?page=member_insert" class="btn btn-primary btn-block btn-proinsert">เพิ่มผู้ใช้งาน</a>
+<!-- <a href="?page=member_insert" class="btn btn-primary btn-block btn-proinsert">เพิ่มผู้ใช้งาน</a> -->
 <br>
   <thead>
   
